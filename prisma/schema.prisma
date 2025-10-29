@@ -1,0 +1,314 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// User model for authentication and profiles
+model User {
+  id            String   @id @default(cuid())
+  email         String   @unique
+  name          String?
+  username      String?  @unique
+  bio           String?
+  avatar        String?
+  bitcoinAddress String?
+  location      String?
+  website       String?
+  twitterHandle String?
+  githubHandle  String?
+  skills        String? // JSON array of skills
+  interests     String? // JSON array of interests
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  // Relations
+  posts         Post[]
+  comments      Comment[]
+  likes         Like[]
+  jobApplications JobApplication[]
+  eventRegistrations EventRegistration[]
+  courseEnrollments CourseEnrollment[]
+  aiQueries     AIQuery[]
+  newsSubmissions NewsSubmission[]
+
+  @@map("users")
+}
+
+// Social Posts
+model Post {
+  id          String   @id @default(cuid())
+  content     String
+  imageUrl    String?
+  hashtags    String?  // JSON array of hashtags
+  likesCount  Int      @default(0)
+  commentsCount Int    @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  authorId    String
+  author      User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  
+  comments    Comment[]
+  likes       Like[]
+  
+  @@map("posts")
+}
+
+// Comments on posts
+model Comment {
+  id        String   @id @default(cuid())
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  postId    String
+  post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  
+  authorId  String
+  author    User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  
+  @@map("comments")
+}
+
+// Likes on posts
+model Like {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  
+  postId    String
+  post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@unique([postId, userId])
+  @@map("likes")
+}
+
+// Academy Courses
+model Course {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  content     String   // Markdown content
+  level       String   // Beginner, Intermediate, Advanced
+  duration    Int      // Duration in minutes
+  thumbnail   String?
+  price       Float    @default(0)
+  isPublished Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  enrollments CourseEnrollment[]
+  lessons     Lesson[]
+  
+  @@map("courses")
+}
+
+// Course Lessons
+model Lesson {
+  id          String   @id @default(cuid())
+  title       String
+  content     String   // Markdown content
+  videoUrl    String?
+  duration    Int      // Duration in minutes
+  order       Int
+  isPublished Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  courseId    String
+  course      Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  
+  @@map("lessons")
+}
+
+// Course Enrollments
+model CourseEnrollment {
+  id         String   @id @default(cuid())
+  progress   Float    @default(0) // Progress percentage
+  completed  Boolean  @default(false)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  courseId   String
+  course     Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  
+  @@unique([userId, courseId])
+  @@map("course_enrollments")
+}
+
+// Job Board
+model Job {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  requirements String?
+  salary      String?
+  location    String
+  type        String   // Full-time, Part-time, Contract, Remote
+  company     String
+  companyLogo String?
+  website     String?
+  email       String
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  applications JobApplication[]
+  
+  @@map("jobs")
+}
+
+// Job Applications
+model JobApplication {
+  id         String   @id @default(cuid())
+  coverLetter String?
+  resumeUrl  String?
+  status     String   @default("pending") // pending, accepted, rejected
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  
+  jobId      String
+  job        Job      @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@unique([jobId, userId])
+  @@map("job_applications")
+}
+
+// Events
+model Event {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  location    String
+  startDate   DateTime
+  endDate     DateTime
+  type        String   // Conference, Meetup, Hackathon, Webinar
+  maxAttendees Int?
+  imageUrl    String?
+  website     String?
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  registrations EventRegistration[]
+  
+  @@map("events")
+}
+
+// Event Registrations
+model EventRegistration {
+  id         String   @id @default(cuid())
+  status     String   @default("registered") // registered, attended, cancelled
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  
+  eventId    String
+  event      Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@unique([eventId, userId])
+  @@map("event_registrations")
+}
+
+// News Articles
+model NewsArticle {
+  id          String   @id @default(cuid())
+  title       String
+  content     String
+  summary     String
+  source      String
+  sourceUrl   String?
+  imageUrl    String?
+  author      String?
+  publishedAt DateTime
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  submissionId String?  @unique
+  submission  NewsSubmission? @relation(fields: [submissionId], references: [id])
+  
+  @@map("news_articles")
+}
+
+// News Submissions (user-submitted news)
+model NewsSubmission {
+  id         String   @id @default(cuid())
+  title      String
+  content    String
+  source     String
+  sourceUrl  String?
+  status     String   @default("pending") // pending, approved, rejected
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  article    NewsArticle?
+  
+  @@map("news_submissions")
+}
+
+// AI Tools and Queries
+model AITool {
+  id          String   @id @default(cuid())
+  name        String
+  description String
+  prompt      String   // Base prompt template
+  category    String   // Price Prediction, Technical Analysis, Education, etc.
+  isActive    Boolean  @default(true)
+  usageCount  Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  queries     AIQuery[]
+  
+  @@map("ai_tools")
+}
+
+// AI Queries (user interactions with AI tools)
+model AIQuery {
+  id         String   @id @default(cuid())
+  prompt     String
+  response   String
+  context    String?  // Additional context provided by user
+  tokensUsed Int?
+  createdAt  DateTime @default(now())
+  
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  toolId     String
+  tool       AITool   @relation(fields: [toolId], references: [id], onDelete: Cascade)
+  
+  @@map("ai_queries")
+}
+
+// System Settings
+model Setting {
+  id    String @id @default(cuid())
+  key   String @unique
+  value String
+  
+  @@map("settings")
+}
