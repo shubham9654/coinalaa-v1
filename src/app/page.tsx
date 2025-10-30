@@ -108,7 +108,7 @@ const features = [
         highlights: ['Monthly meetups', 'Conference alerts', 'Local chapters']
       }
     ],
-    stats: { users: '50K+', posts: '200K+', groups: '500+', events: '100+' }
+    stats: { posts: '2K+', groups: '50+', events: '100+' }
   },
   {
     id: 'bitcoin-academy',
@@ -144,7 +144,7 @@ const features = [
         highlights: ['Q&A sessions', 'Real-time interaction', 'Recorded sessions']
       }
     ],
-    stats: { courses: '100+', students: '25K+', instructors: '50+', certificates: '10K+' }
+    stats: { courses: '100+'}
   },
   {
     id: 'bitcoin-jobs',
@@ -180,7 +180,7 @@ const features = [
         highlights: ['Interview prep', 'Salary guides', 'Career paths']
       }
     ],
-    stats: { jobs: '500+', companies: '200+', hires: '1K+', salaries: '$80K-$200K' }
+    stats: {}
   },
   {
     id: 'bitcoin-gpts',
@@ -216,7 +216,7 @@ const features = [
         highlights: ['Adaptive learning', 'Progress tracking', 'Quiz generation']
       }
     ],
-    stats: { tools: '20+', users: '15K+', queries: '100K+', accuracy: '95%' }
+    stats: { tools: '20+', queries: '1K+', accuracy: '95%' }
   },
   {
     id: 'bitcoin-marketplace',
@@ -252,7 +252,7 @@ const features = [
         highlights: ['Live tracking', 'Delivery updates', 'Customer support']
       }
     ],
-    stats: { vendors: '500+', products: '10K+', orders: '25K+', revenue: '1000+ BTC' }
+    stats: { products: '100+'}
   },
   {
     id: 'influencers',
@@ -288,7 +288,7 @@ const features = [
         highlights: ['Q&A sessions', 'AMAs', 'Direct messages']
       }
     ],
-    stats: { influencers: '200+', followers: '5M+', content: '50K+/day', engagement: '85%' }
+    stats: { engagement: '85%' }
   },
   {
     id: 'bitcoin-spaces',
@@ -324,7 +324,7 @@ const features = [
         highlights: ['Verification badges', 'Payment methods', 'Business hours']
       }
     ],
-    stats: { businesses: '2K+', cities: '500+', countries: '100+', reviews: '10K+' }
+    stats: { }
   },
   {
     id: 'bitcoin-events',
@@ -360,7 +360,7 @@ const features = [
         highlights: ['HD streaming', 'Live chat', 'Recorded sessions']
       }
     ],
-    stats: { events: '100+/month', attendees: '50K+', speakers: '1K+', streams: '500+' }
+    stats: { events: '10+/month' }
   },
   {
     id: 'bitcoin-news',
@@ -396,7 +396,7 @@ const features = [
         highlights: ['Expert analysis', 'Thought leadership', 'Community discussions']
       }
     ],
-    stats: { articles: '200+/day', sources: '100+', readers: '100K+', alerts: '10K+' }
+    stats: { articles: '200+/day', sources: '100+', alerts: '10K+' }
   }
 ]
 
