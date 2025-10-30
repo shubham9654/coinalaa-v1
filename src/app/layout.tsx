@@ -14,24 +14,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Z.ai Code Scaffold - AI-Powered Development",
-  description: "Modern Next.js scaffold optimized for AI-powered development with Z.ai. Built with TypeScript, Tailwind CSS, and shadcn/ui.",
-  keywords: ["Z.ai", "Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "AI development", "React"],
-  authors: [{ name: "Z.ai Team" }],
+  title: "Coinlaa - The Ultimate Bitcoin Social Network",
+  description: "Connect, trade, and succeed in the Bitcoin world. Join thousands of Bitcoin enthusiasts sharing insights, tracking markets, and building wealth together.",
+  keywords: ["Coinlaa", "Bitcoin", "cryptocurrency", "social network", "trading", "Bitcoin marketplace", "Bitcoin learning", "crypto community", "blockchain", "Bitcoin jobs", "crypto events"],
+  authors: [{ name: "Coinlaa Team" }],
   icons: {
-    icon: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
+    icon: "/favicon.ico",
   },
   openGraph: {
-    title: "Z.ai Code Scaffold",
-    description: "AI-powered development with modern React stack",
-    url: "https://chat.z.ai",
-    siteName: "Z.ai",
+    title: "Coinlaa - The Ultimate Bitcoin Social Network",
+    description: "Connect with thousands of Bitcoin enthusiasts. Track prices, share insights, and build wealth together.",
+    url: "https://coinlaa.com",
+    siteName: "Coinlaa",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Z.ai Code Scaffold",
-    description: "AI-powered development with modern React stack",
+    title: "Coinlaa - The Ultimate Bitcoin Social Network",
+    description: "Connect, trade, and succeed in the Bitcoin world with thousands of enthusiasts.",
   },
 };
 
