@@ -14,15 +14,15 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import {
-  Bitcoin,
-  Users,
+import { 
+  Bitcoin, 
+  Users, 
   MessageCircle,
-  GraduationCap,
-  Briefcase,
-  Calendar,
-  Newspaper,
-  Bot,
+  GraduationCap, 
+  Briefcase, 
+  Calendar, 
+  Newspaper, 
+  Bot, 
   Search,
   TrendingUp,
   Globe,
@@ -39,7 +39,28 @@ import {
   HandHeart,
   UserCheck,
   Store,
-} from "lucide-react";
+  ChevronRight,
+  CheckCircle,
+  ArrowRight,
+  Sparkles,
+  Target,
+  Award,
+  BookOpen,
+  Video,
+  Users2,
+  MessageSquare,
+  ShoppingCart,
+  Package,
+  CreditCard,
+  Truck,
+  Headphones,
+  FileText,
+  BarChart,
+  Lightbulb,
+  Globe2,
+  Link,
+  Heart
+} from 'lucide-react'
 import BitcoinGPTs from "@/components/bitcoin-gpts";
 import AuthButton from "@/components/auth-button";
 import BitcoinClock from "@/components/bitcoin-clock";
@@ -51,6 +72,333 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
+
+const features = [
+  {
+    id: 'bitcoin-connect',
+    icon: HandHeart,
+    title: 'Bitcoin Connect',
+    description: 'Connect with Bitcoin enthusiasts worldwide',
+    color: 'text-orange-500',
+    bgColor: 'bg-orange-50',
+    detailedDescription: 'Join the largest Bitcoin community platform. Connect, share, and grow with like-minded Bitcoin enthusiasts from around the world.',
+    subFeatures: [
+      {
+        title: 'Community Feed',
+        description: 'Real-time updates from Bitcoin enthusiasts',
+        icon: MessageSquare,
+        highlights: ['Real-time posts', 'Like & comment', 'Share content']
+      },
+      {
+        title: 'Private Messaging',
+        description: 'Direct chat with other Bitcoin enthusiasts',
+        icon: MessageCircle,
+        highlights: ['End-to-end encryption', 'File sharing', 'Voice notes']
+      },
+      {
+        title: 'Bitcoin Groups',
+        description: 'Join specialized Bitcoin discussion groups',
+        icon: Users2,
+        highlights: ['Topic-based groups', 'Events planning', 'Knowledge sharing']
+      },
+      {
+        title: 'Networking Events',
+        description: 'Virtual and physical meetups',
+        icon: Calendar,
+        highlights: ['Monthly meetups', 'Conference alerts', 'Local chapters']
+      }
+    ],
+    stats: { users: '50K+', posts: '200K+', groups: '500+', events: '100+' }
+  },
+  {
+    id: 'bitcoin-academy',
+    icon: GraduationCap,
+    title: 'Bitcoin Academy',
+    description: 'Learn Bitcoin from basics to advanced concepts',
+    color: 'text-blue-500',
+    bgColor: 'bg-blue-50',
+    detailedDescription: 'Master Bitcoin with comprehensive courses, tutorials, and certifications designed for all skill levels.',
+    subFeatures: [
+      {
+        title: 'Video Courses',
+        description: 'High-quality video tutorials from Bitcoin experts',
+        icon: Video,
+        highlights: ['HD quality videos', 'Expert instructors', 'Downloadable content']
+      },
+      {
+        title: 'Interactive Tutorials',
+        description: 'Hands-on learning with practical exercises',
+        icon: BookOpen,
+        highlights: ['Step-by-step guides', 'Code examples', 'Practice projects']
+      },
+      {
+        title: 'Certification Programs',
+        description: 'Get certified in Bitcoin expertise',
+        icon: Award,
+        highlights: ['Industry recognized', 'Skill verification', 'Career boost']
+      },
+      {
+        title: 'Live Workshops',
+        description: 'Interactive sessions with Bitcoin experts',
+        icon: Users2,
+        highlights: ['Q&A sessions', 'Real-time interaction', 'Recorded sessions']
+      }
+    ],
+    stats: { courses: '100+', students: '25K+', instructors: '50+', certificates: '10K+' }
+  },
+  {
+    id: 'bitcoin-jobs',
+    icon: Briefcase,
+    title: 'Bitcoin Jobs',
+    description: 'Find Bitcoin-related career opportunities',
+    color: 'text-green-500',
+    bgColor: 'bg-green-50',
+    detailedDescription: 'Discover career opportunities in the Bitcoin ecosystem. Connect with top companies building the future of finance.',
+    subFeatures: [
+      {
+        title: 'Job Board',
+        description: 'Curated Bitcoin and crypto job listings',
+        icon: Briefcase,
+        highlights: ['Daily updates', 'Remote options', 'All levels']
+      },
+      {
+        title: 'Company Profiles',
+        description: 'Detailed information about Bitcoin companies',
+        icon: Building,
+        highlights: ['Company culture', 'Benefits info', 'Team details']
+      },
+      {
+        title: 'Resume Builder',
+        description: 'Create Bitcoin-focused professional profiles',
+        icon: FileText,
+        highlights: ['Bitcoin skills', 'Project showcase', 'Certification display']
+      },
+      {
+        title: 'Career Resources',
+        description: 'Guidance and tips for Bitcoin careers',
+        icon: Lightbulb,
+        highlights: ['Interview prep', 'Salary guides', 'Career paths']
+      }
+    ],
+    stats: { jobs: '500+', companies: '200+', hires: '1K+', salaries: '$80K-$200K' }
+  },
+  {
+    id: 'bitcoin-gpts',
+    icon: Bot,
+    title: 'Bitcoin GPTs',
+    description: 'AI-powered Bitcoin tools and assistants',
+    color: 'text-cyan-500',
+    bgColor: 'bg-cyan-50',
+    detailedDescription: 'Leverage AI-powered tools for Bitcoin analysis, trading, and education. Get instant insights and assistance.',
+    subFeatures: [
+      {
+        title: 'Bitcoin Assistant',
+        description: 'AI chatbot for Bitcoin questions and guidance',
+        icon: Bot,
+        highlights: ['24/7 availability', 'Expert knowledge', 'Multi-language']
+      },
+      {
+        title: 'Price Analysis',
+        description: 'AI-powered market analysis and predictions',
+        icon: BarChart,
+        highlights: ['Technical analysis', 'Market trends', 'Risk assessment']
+      },
+      {
+        title: 'Portfolio Optimizer',
+        description: 'AI-driven portfolio management suggestions',
+        icon: Target,
+        highlights: ['Risk analysis', 'Asset allocation', 'Performance tracking']
+      },
+      {
+        title: 'Learning Assistant',
+        description: 'Personalized Bitcoin education AI tutor',
+        icon: BookOpen,
+        highlights: ['Adaptive learning', 'Progress tracking', 'Quiz generation']
+      }
+    ],
+    stats: { tools: '20+', users: '15K+', queries: '100K+', accuracy: '95%' }
+  },
+  {
+    id: 'bitcoin-marketplace',
+    icon: Store,
+    title: 'Bitcoin Marketplace',
+    description: 'Shop at trusted vendor stores accepting Bitcoin',
+    color: 'text-green-600',
+    bgColor: 'bg-green-50',
+    detailedDescription: 'Discover and shop from verified Bitcoin vendors. Buy products and services using Bitcoin with secure transactions.',
+    subFeatures: [
+      {
+        title: 'Vendor Shops',
+        description: 'Verified Bitcoin-accepting stores',
+        icon: Store,
+        highlights: ['Verified vendors', 'Quality assurance', 'Customer reviews']
+      },
+      {
+        title: 'Product Catalog',
+        description: 'Wide range of products and services',
+        icon: Package,
+        highlights: ['Multiple categories', 'Detailed descriptions', 'High-quality images']
+      },
+      {
+        title: 'Secure Payments',
+        description: 'Safe Bitcoin payment processing',
+        icon: Shield,
+        highlights: ['Escrow service', 'Instant confirmations', 'Refund policy']
+      },
+      {
+        title: 'Order Tracking',
+        description: 'Real-time order and delivery tracking',
+        icon: Truck,
+        highlights: ['Live tracking', 'Delivery updates', 'Customer support']
+      }
+    ],
+    stats: { vendors: '500+', products: '10K+', orders: '25K+', revenue: '1000+ BTC' }
+  },
+  {
+    id: 'influencers',
+    icon: UserCheck,
+    title: 'Influencers',
+    description: 'Follow leading Bitcoin voices and thought leaders',
+    color: 'text-purple-500',
+    bgColor: 'bg-purple-50',
+    detailedDescription: 'Connect with and follow influential Bitcoin personalities. Get insights, analysis, and updates from trusted voices.',
+    subFeatures: [
+      {
+        title: 'Influencer Profiles',
+        description: 'Detailed profiles of Bitcoin thought leaders',
+        icon: UserCheck,
+        highlights: ['Background info', 'Expertise areas', 'Social links']
+      },
+      {
+        title: 'Content Feed',
+        description: 'Aggregated content from Bitcoin influencers',
+        icon: MessageSquare,
+        highlights: ['Real-time updates', 'Multiple platforms', 'Curated content']
+      },
+      {
+        title: 'Trending Analysis',
+        description: 'What is trending in the Bitcoin community',
+        icon: TrendingUp,
+        highlights: ['Hot topics', 'Sentiment analysis', 'Viral content']
+      },
+      {
+        title: 'Direct Engagement',
+        description: 'Interact directly with influencers',
+        icon: Heart,
+        highlights: ['Q&A sessions', 'AMAs', 'Direct messages']
+      }
+    ],
+    stats: { influencers: '200+', followers: '5M+', content: '50K+/day', engagement: '85%' }
+  },
+  {
+    id: 'bitcoin-spaces',
+    icon: Building,
+    title: 'Bitcoin Spaces',
+    description: 'Find Bitcoin businesses and services worldwide',
+    color: 'text-yellow-500',
+    bgColor: 'bg-yellow-50',
+    detailedDescription: 'Discover Bitcoin-friendly businesses and services in your area and worldwide. Support the Bitcoin ecosystem.',
+    subFeatures: [
+      {
+        title: 'Business Directory',
+        description: 'Comprehensive listing of Bitcoin businesses',
+        icon: Building,
+        highlights: ['Verified listings', 'Contact info', 'Services offered']
+      },
+      {
+        title: 'Map Integration',
+        description: 'Find Bitcoin businesses near you',
+        icon: MapPin,
+        highlights: ['Interactive maps', 'Distance calculation', 'Route planning']
+      },
+      {
+        title: 'Reviews & Ratings',
+        description: 'Community-driven business reviews',
+        icon: Star,
+        highlights: ['User reviews', 'Rating system', 'Photo uploads']
+      },
+      {
+        title: 'Business Verification',
+        description: 'Verified Bitcoin-accepting businesses',
+        icon: CheckCircle,
+        highlights: ['Verification badges', 'Payment methods', 'Business hours']
+      }
+    ],
+    stats: { businesses: '2K+', cities: '500+', countries: '100+', reviews: '10K+' }
+  },
+  {
+    id: 'bitcoin-events',
+    icon: Calendar,
+    title: 'Bitcoin Events',
+    description: 'Discover Bitcoin meetups and conferences',
+    color: 'text-purple-500',
+    bgColor: 'bg-purple-50',
+    detailedDescription: 'Find and attend Bitcoin events worldwide. Network with enthusiasts and learn from industry experts.',
+    subFeatures: [
+      {
+        title: 'Event Calendar',
+        description: 'Comprehensive Bitcoin events listing',
+        icon: Calendar,
+        highlights: ['Global events', 'Filter options', 'Calendar sync']
+      },
+      {
+        title: 'Conference Tickets',
+        description: 'Buy tickets for Bitcoin conferences',
+        icon: CreditCard,
+        highlights: ['Bitcoin payments', 'Early bird discounts', 'Group rates']
+      },
+      {
+        title: 'Event Networking',
+        description: 'Connect with attendees before events',
+        icon: Users2,
+        highlights: ['Attendee list', 'Meeting scheduler', 'Discussion forums']
+      },
+      {
+        title: 'Live Streaming',
+        description: 'Watch events remotely',
+        icon: Video,
+        highlights: ['HD streaming', 'Live chat', 'Recorded sessions']
+      }
+    ],
+    stats: { events: '100+/month', attendees: '50K+', speakers: '1K+', streams: '500+' }
+  },
+  {
+    id: 'bitcoin-news',
+    icon: Newspaper,
+    title: 'Bitcoin News',
+    description: 'Stay updated with latest Bitcoin news',
+    color: 'text-red-500',
+    bgColor: 'bg-red-50',
+    detailedDescription: 'Get the latest Bitcoin news, analysis, and updates from trusted sources worldwide. Stay informed about the ecosystem.',
+    subFeatures: [
+      {
+        title: 'News Aggregator',
+        description: 'Bitcoin news from multiple sources',
+        icon: Newspaper,
+        highlights: ['Multiple sources', 'Real-time updates', 'Categorized news']
+      },
+      {
+        title: 'Market Analysis',
+        description: 'In-depth Bitcoin market analysis',
+        icon: BarChart,
+        highlights: ['Technical analysis', 'Market insights', 'Expert opinions']
+      },
+      {
+        title: 'Breaking Alerts',
+        description: 'Instant notifications for important news',
+        icon: Sparkles,
+        highlights: ['Push notifications', 'Email alerts', 'SMS alerts']
+      },
+      {
+        title: 'Opinion Pieces',
+        description: 'Editorial content from Bitcoin experts',
+        icon: FileText,
+        highlights: ['Expert analysis', 'Thought leadership', 'Community discussions']
+      }
+    ],
+    stats: { articles: '200+/day', sources: '100+', readers: '100K+', alerts: '10K+' }
+  }
+]
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("social");
@@ -66,322 +414,6 @@ export default function Home() {
   const handleSignOut = () => {
     setUser(null);
   };
-
-  const features = [
-    {
-      icon: HandHeart,
-      title: "Connect",
-      description: "Connect with Bitcoin enthusiasts worldwide",
-      color: "text-orange-500",
-    },
-    {
-      icon: GraduationCap,
-      title: "Academy",
-      description: "Learn Bitcoin from basics to advanced concepts",
-      color: "text-blue-500",
-    },
-    {
-      icon: Briefcase,
-      title: " Jobs",
-      description: "Find Bitcoin-related career opportunities",
-      color: "text-green-500",
-    },
-    {
-      icon: Bot,
-      title: "Bitcoin GPTs",
-      description: "AI-powered Bitcoin tools and assistants",
-      color: "text-cyan-500",
-    },
-    {
-      icon: Store,
-      title: "Bitcoin Marketplace",
-      description: "Shop at trusted vendor stores accepting Bitcoin",
-      color: "text-green-600",
-    },
-    {
-      icon: UserCheck,
-      title: "Influencers",
-      description: "Follow leading Bitcoin voices and thought leaders",
-      color: "text-purple-500",
-    },
-    {
-      icon: Building,
-      title: "Bitcoin Spaces",
-      description: "Find Bitcoin businesses and services worldwide",
-      color: "text-yellow-500",
-    },
-    {
-      icon: Calendar,
-      title: "Bitcoin Events",
-      description: "Discover Bitcoin meetups and conferences",
-      color: "text-purple-500",
-    },
-    {
-      icon: Newspaper,
-      title: "Bitcoin News",
-      description: "Stay updated with latest Bitcoin news",
-      color: "text-red-500",
-    },
-  ];
-
-  const socialPosts = [
-    {
-      id: 1,
-      author: "Bitcoin Max",
-      avatar: "/api/placeholder/40/40",
-      content:
-        "Just finished setting up my first full node! The feeling of supporting the network is incredible 🚀",
-      timestamp: "2 hours ago",
-      likes: 42,
-      comments: 8,
-    },
-    {
-      id: 2,
-      author: "Satoshi Jr",
-      avatar: "/api/placeholder/40/40",
-      content:
-        "Lightning Network is changing the game. Instant, cheap transactions everywhere!",
-      timestamp: "4 hours ago",
-      likes: 89,
-      comments: 15,
-    },
-    {
-      id: 3,
-      author: "Crypto Alice",
-      avatar: "/api/placeholder/40/40",
-      content:
-        "Teaching my parents about Bitcoin today. They finally understand why it matters!",
-      timestamp: "6 hours ago",
-      likes: 156,
-      comments: 23,
-    },
-  ];
-
-  const academyCourses = [
-    {
-      title: "Bitcoin Fundamentals",
-      description:
-        "Learn the basics of Bitcoin, blockchain technology, and digital currency",
-      level: "Beginner",
-      duration: "2 hours",
-      students: 1234,
-    },
-    {
-      title: "Lightning Network Deep Dive",
-      description:
-        "Master the second layer solution for instant Bitcoin transactions",
-      level: "Intermediate",
-      duration: "4 hours",
-      students: 567,
-    },
-    {
-      title: "Bitcoin Security Best Practices",
-      description:
-        "Protect your Bitcoin with proper security measures and storage solutions",
-      level: "Advanced",
-      duration: "3 hours",
-      students: 234,
-    },
-  ];
-
-  const jobListings = [
-    {
-      title: "Bitcoin Developer",
-      company: "Crypto Startup",
-      location: "Remote",
-      type: "Full-time",
-      salary: "$80k - $120k",
-      posted: "2 days ago",
-    },
-    {
-      title: "Blockchain Researcher",
-      company: "Bitcoin Foundation",
-      location: "San Francisco",
-      type: "Full-time",
-      salary: "$100k - $150k",
-      posted: "3 days ago",
-    },
-    {
-      title: "Lightning Network Engineer",
-      company: "Payment Company",
-      location: "Remote",
-      type: "Contract",
-      salary: "$60 - $80/hour",
-      posted: "1 week ago",
-    },
-  ];
-
-  const events = [
-    {
-      title: "Bitcoin Conference 2024",
-      date: "March 15-17, 2024",
-      location: "Miami, FL",
-      attendees: 5000,
-      type: "Conference",
-    },
-    {
-      title: "Lightning Hackathon",
-      date: "February 8-10, 2024",
-      location: "Austin, TX",
-      attendees: 200,
-      type: "Hackathon",
-    },
-    {
-      title: "Bitcoin Meetup",
-      date: "January 25, 2024",
-      location: "New York, NY",
-      attendees: 50,
-      type: "Meetup",
-    },
-  ];
-
-  const newsItems = [
-    {
-      title: "Bitcoin Reaches New All-Time High",
-      source: "Crypto News",
-      time: "1 hour ago",
-      summary:
-        "Bitcoin surges past previous records as institutional adoption accelerates...",
-    },
-    {
-      title: "Lightning Network Capacity Doubles",
-      source: "Bitcoin Magazine",
-      time: "3 hours ago",
-      summary:
-        "The Lightning Network continues its growth trajectory with record capacity...",
-    },
-    {
-      title: "El Salvador Announces New Bitcoin Initiatives",
-      source: "Reuters",
-      time: "5 hours ago",
-      summary:
-        "Government expands Bitcoin education and adoption programs nationwide...",
-    },
-  ];
-
-  const fintechApps = [
-    {
-      name: "Cash App",
-      category: "Payments",
-      description: "Buy, sell, and send Bitcoin instantly with the Cash App",
-      rating: 4.5,
-      downloads: "10M+",
-      icon: "💰",
-      features: ["Bitcoin Trading", "Lightning Network", "Debit Card"],
-    },
-    {
-      name: "Strike",
-      category: "Payments",
-      description: "Lightning Network payments app for global money transfers",
-      rating: 4.3,
-      downloads: "1M+",
-      icon: "⚡",
-      features: ["Lightning Network", "Global Transfers", "Bitcoin Storage"],
-    },
-    {
-      name: "Muun Wallet",
-      category: "Wallet",
-      description: "Self-custody Bitcoin wallet with Lightning Network support",
-      rating: 4.6,
-      downloads: "500K+",
-      icon: "🔐",
-      features: ["Multi-signature", "Lightning Network", "Self-custody"],
-    },
-    {
-      name: "Phoenix Wallet",
-      category: "Wallet",
-      description: "Simple Lightning Network wallet for everyday Bitcoin use",
-      rating: 4.4,
-      downloads: "100K+",
-      icon: "🦅",
-      features: ["Lightning Network", "Non-custodial", "Auto-channels"],
-    },
-    {
-      name: "Zap",
-      category: "Wallet",
-      description: "Lightning Network desktop and mobile wallet",
-      rating: 4.2,
-      downloads: "50K+",
-      icon: "⚡",
-      features: ["Lightning Network", "Desktop App", "Node Management"],
-    },
-    {
-      name: "BlueWallet",
-      category: "Wallet",
-      description:
-        "Bitcoin and Lightning Network wallet with advanced features",
-      rating: 4.1,
-      downloads: "500K+",
-      icon: "🔵",
-      features: ["Multi-wallet", "Lightning Network", "Watch-only"],
-    },
-  ];
-
-  const businesses = [
-    {
-      name: "Bitcoin Coffee Shop",
-      category: "Food & Beverage",
-      location: "San Francisco, CA",
-      description:
-        "First Bitcoin-only coffee shop accepting Lightning Network payments",
-      rating: 4.8,
-      verified: true,
-      paymentMethods: ["Bitcoin", "Lightning Network"],
-      website: "bitcoincoffee.com",
-    },
-    {
-      name: "Crypto Gear Store",
-      category: "Retail",
-      location: "Miami, FL",
-      description: "Bitcoin merchandise and crypto-themed clothing store",
-      rating: 4.5,
-      verified: true,
-      paymentMethods: ["Bitcoin", "Lightning Network", "Credit Card"],
-      website: "cryptogear.com",
-    },
-    {
-      name: "Satoshi's Pizza",
-      category: "Food & Beverage",
-      location: "New York, NY",
-      description: "Pizza place accepting Bitcoin since 2018",
-      rating: 4.6,
-      verified: false,
-      paymentMethods: ["Bitcoin", "Lightning Network"],
-      website: "satoshispizza.com",
-    },
-    {
-      name: "Bitcoin Real Estate",
-      category: "Real Estate",
-      location: "Austin, TX",
-      description:
-        "Real estate agency specializing in Bitcoin property transactions",
-      rating: 4.7,
-      verified: true,
-      paymentMethods: ["Bitcoin", "Wire Transfer"],
-      website: "bitcoinrealestate.com",
-    },
-    {
-      name: "Crypto Legal Services",
-      category: "Professional Services",
-      location: "Los Angeles, CA",
-      description:
-        "Legal firm specializing in cryptocurrency and blockchain regulations",
-      rating: 4.4,
-      verified: true,
-      paymentMethods: ["Bitcoin", "Lightning Network", "Bank Transfer"],
-      website: "cryptolegal.com",
-    },
-    {
-      name: "Bitcoin Tech Repair",
-      category: "Services",
-      location: "Seattle, WA",
-      description: "Computer and tech repair shop accepting Bitcoin payments",
-      rating: 4.3,
-      verified: false,
-      paymentMethods: ["Bitcoin", "Lightning Network"],
-      website: "btechrepair.com",
-    },
-  ];
 
   return (
     <div className="min-h-screen relative overflow-hidden">
@@ -521,8 +553,104 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Features Accordion */}
+      <section className="py-16 px-4 bg-white/40 backdrop-blur-sm">
+        <div className="container mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Complete Bitcoin Ecosystem</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Explore our comprehensive suite of Bitcoin tools and services. Each feature is designed to enhance your Bitcoin experience.
+            </p>
+          </div>
+          
+          <Accordion type="single" collapsible className="space-y-6">
+            {features.map((feature) => (
+              <AccordionItem key={feature.id} value={feature.id} className="border-0">
+                <AccordionTrigger className="hover:no-underline group py-6 px-8 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-200">
+                  <div className="flex items-center justify-between w-full pr-4">
+                    <div className="flex items-center space-x-6">
+                      <div className={`p-4 rounded-2xl ${feature.bgColor} group-hover:scale-110 transition-transform duration-200 shadow-sm`}>
+                        <feature.icon className={`h-8 w-8 ${feature.color}`} />
+                      </div>
+                      <div className="text-left">
+                        <h3 className="text-xl font-bold text-gray-900 group-hover:text-orange-600 transition-colors">
+                          {feature.title}
+                        </h3>
+                        <p className="text-base text-gray-600 mt-2">{feature.description}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center space-x-6">
+                      <div className="hidden lg:flex items-center space-x-6 text-sm text-gray-500">
+                        {Object.entries(feature.stats).map(([key, value]) => (
+                          <div key={key} className="text-center">
+                            <div className="font-bold text-gray-900 text-base">{value}</div>
+                            <div className="capitalize text-xs">{key}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </AccordionTrigger>
+                
+                <AccordionContent className="pt-6">
+                  <div className="bg-white rounded-xl p-8 border border-gray-100 shadow-sm">
+                    {/* Detailed Description */}
+                    <div className="mb-10">
+                      <p className="text-lg text-gray-700 leading-relaxed">{feature.detailedDescription}</p>
+                    </div>
+                    
+                    {/* Sub-Features Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                      {feature.subFeatures.map((subFeature, index) => (
+                        <div key={index} className="flex space-x-6">
+                          <div className={`p-3 rounded-xl ${feature.bgColor} flex-shrink-0 shadow-sm`}>
+                            <subFeature.icon className={`h-6 w-6 ${feature.color}`} />
+                          </div>
+                          <div className="flex-1">
+                            <h4 className="font-bold text-gray-900 mb-3 text-lg">{subFeature.title}</h4>
+                            <p className="text-base text-gray-600 mb-4 leading-relaxed">{subFeature.description}</p>
+                            <div className="flex flex-wrap gap-2">
+                              {subFeature.highlights.map((highlight, highlightIndex) => (
+                                <div key={highlightIndex} className="flex items-center space-x-2 text-sm text-gray-600 bg-gray-50 px-3 py-2 rounded-full">
+                                  <CheckCircle className="h-4 w-4 text-green-500" />
+                                  <span>{highlight}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    {/* Stats Bar */}
+                    <div className="border-t pt-8">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-8">
+                          {Object.entries(feature.stats).map(([key, value]) => (
+                            <div key={key} className="flex items-center space-x-3">
+                              <div className={`w-3 h-3 rounded-full ${feature.color.replace('text', 'bg')}`}></div>
+                              <span className="text-base text-gray-600">
+                                <span className="font-bold text-gray-900 text-lg">{value}</span> {key}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                        <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-base px-6 py-3">
+                          Explore {feature.title}
+                          <ArrowRight className="h-5 w-5 ml-2" />
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
+
         {/* Features Grid */}
-        <section className="py-16 px-4 bg-white/40 backdrop-blur-sm">
+        {/* <section className="py-16 px-4 bg-white/40 backdrop-blur-sm">
           <div className="container mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {features.map((feature, index) => (
@@ -541,7 +669,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Main Content Tabs */}
         {/* <section className="py-16 px-4 bg-white/20 backdrop-blur-sm">
@@ -979,7 +1107,7 @@ export default function Home() {
 
         {/* Footer */}
         {/* FAQ Accordion (above footer) */}
-        <section className="py-12 px-4 bg-white/60 backdrop-blur-sm">
+        {/* <section className="py-12 px-4 bg-white/60 backdrop-blur-sm">
           <div className="container mx-auto max-w-3xl">
             <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">
               Accordian
@@ -1012,7 +1140,7 @@ export default function Home() {
               </AccordionItem>
             </Accordion>
           </div>
-        </section>
+        </section> */}
 
         <footer className="bg-gray-900 text-white py-12 px-4">
           <div className="container mx-auto">
