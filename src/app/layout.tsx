@@ -27,11 +27,20 @@ export const metadata: Metadata = {
     url: "https://coinlaa.com",
     siteName: "Coinlaa",
     type: "website",
+    images: [{
+      url: "/logo.svg",
+      width: 1200,
+      height: 630,
+      alt: "Coinlaa - Bitcoin Social Network"
+    }]
   },
   twitter: {
     card: "summary_large_image",
     title: "Coinlaa - The Ultimate Bitcoin Social Network",
     description: "Connect, trade, and succeed in the Bitcoin world with thousands of enthusiasts.",
+    images: ["/logo.svg"],
+    creator: "@coinlaa",
+    site: "@coinlaa"
   },
 };
 

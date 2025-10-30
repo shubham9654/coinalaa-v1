@@ -486,7 +486,7 @@ export default function Home() {
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-2">
                 <img
-                  src="/logo.png"
+                  src="/logo.svg"
                   alt="Logo"
                   className="w-32 h-12 object-contain "
                 />
@@ -1150,7 +1150,7 @@ export default function Home() {
               <div>
                 <div className="flex items-center justify-center space-x-2 mb-4">
                   <img
-                  src="/logo.png"
+                  src="/logo.svg"
                   alt="Logo"
                   className="w-32 h-12 object-contain "
                 />
