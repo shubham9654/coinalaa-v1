@@ -603,9 +603,11 @@ export default function Home() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
                       {feature.subFeatures.map((subFeature, index) => (
                         <div key={index} className="flex space-x-6">
-                          <div className={`p-3 rounded-xl ${feature.bgColor} flex-shrink-0 shadow-sm`}>
+                          <div>
+                          <div className={`p-3 h-max rounded-xl ${feature.bgColor} flex-shrink-0 shadow-sm`}>
                             <subFeature.icon className={`h-6 w-6 ${feature.color}`} />
                           </div>
+                            </div>
                           <div className="flex-1">
                             <h4 className="font-bold text-gray-900 mb-3 text-lg">{subFeature.title}</h4>
                             <p className="text-base text-gray-600 mb-4 leading-relaxed">{subFeature.description}</p>
