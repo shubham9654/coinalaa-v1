@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   keywords: ["Coinlaa", "Bitcoin", "cryptocurrency", "social network", "trading", "Bitcoin marketplace", "Bitcoin learning", "crypto community", "blockchain", "Bitcoin jobs", "crypto events"],
   authors: [{ name: "Coinlaa Team" }],
   icons: {
-    icon: "/favicon.ico",
+    icon: "/logo.svg",
   },
   openGraph: {
     title: "Coinlaa - The Ultimate Bitcoin Social Network",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     siteName: "Coinlaa",
     type: "website",
     images: [{
-      url: "/logo.svg",
+      url: "/logo.png",
       width: 1200,
       height: 630,
       alt: "Coinlaa - Bitcoin Social Network"
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Coinlaa - The Ultimate Bitcoin Social Network",
     description: "Connect, trade, and succeed in the Bitcoin world with thousands of enthusiasts.",
-    images: ["/logo.svg"],
+    images: ["/logo.png"],
     creator: "@coinlaa",
     site: "@coinlaa"
   },
