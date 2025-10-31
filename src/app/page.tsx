@@ -58,7 +58,6 @@ import {
   BarChart,
   Lightbulb,
   Globe2,
-  Link,
   Heart
 } from 'lucide-react'
 import BitcoinGPTs from "@/components/bitcoin-gpts";
@@ -72,6 +71,8 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
 
 const features = [
   {
@@ -432,7 +433,7 @@ const features = [
         highlights: ['Growth roadmaps', 'Partnership pipelines', 'Media amplification']
       }
     ],
-    stats: { }
+    stats: { startups: '30+', capital: '$60M+', mentors: '45+' }
   }
 ]
 
@@ -516,40 +517,12 @@ export default function Home() {
 
       {/* Content */}
       <div className="relative z-10 bg-gradient-to-br from-orange-50/30 to-white/30">
-        {/* Header */}
-        <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
-          <div className="container mx-auto px-4 py-4">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-2">
-                <img
-                  src="/logo.svg"
-                  alt="Logo"
-                  className="w-32 h-12 object-contain "
-                />
-              </div>
-
-              <div className="flex items-center space-x-4">
-                {user ? (
-                  <div className="flex items-center space-x-4">
-                    <div className="flex items-center space-x-2">
-                      <Avatar className="h-8 w-8">
-                        <AvatarFallback>{user.name[0]}</AvatarFallback>
-                      </Avatar>
-                      <span className="text-sm font-medium">{user.name}</span>
-                    </div>
-                    <Button variant="outline" size="sm" onClick={handleSignOut}>
-                      Sign Out
-                    </Button>
-                  </div>
-                ) : (
-                  <Button size="sm" onClick={() => setShowAuth(true)}>
-                    Sign In
-                  </Button>
-                )}
-              </div>
-            </div>
-          </div>
-        </header>
+        <SiteHeader
+          user={user ? { name: user.name } : null}
+          onSignIn={() => setShowAuth(true)}
+          onSignUp={() => setShowAuth(true)}
+          onSignOut={handleSignOut}
+        />
 
         {/* Hero Section */}
         <section className="pt-20 px-4">
@@ -578,7 +551,7 @@ export default function Home() {
         </section>
 
         {/* Features Accordion */}
-      <section className="py-16 px-4 bg-white/40 backdrop-blur-sm">
+      <section id="features" className="py-16 px-4 bg-white/40 backdrop-blur-sm">
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Complete Bitcoin Ecosystem</h2>
@@ -587,9 +560,17 @@ export default function Home() {
             </p>
           </div>
           
-          <Accordion type="single" collapsible className="space-y-6">
+          <Accordion
+            type="single"
+            collapsible
+            className="features-accordion grid grid-cols-1 md:grid-cols-2 gap-6"
+          >
             {features.map((feature) => (
-              <AccordionItem key={feature.id} value={feature.id} className="border-0">
+              <AccordionItem
+                key={feature.id}
+                value={feature.id}
+                className="border border-gray-100 rounded-xl bg-white shadow-sm"
+              >
                 <AccordionTrigger className="hover:no-underline group py-6 px-8 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-200">
                   <div className="flex items-center justify-between w-full pr-4">
                     <div className="flex items-center space-x-6">
@@ -616,7 +597,7 @@ export default function Home() {
                   </div>
                 </AccordionTrigger>
                 
-                <AccordionContent className="pt-6">
+                <AccordionContent className="pt-6 px-8 pb-8">
                   <div className="bg-white rounded-xl p-8 border border-gray-100 shadow-sm">
                     {/* Detailed Description */}
                     <div className="mb-10">
@@ -1168,29 +1149,7 @@ export default function Home() {
           </div>
         </section> */}
 
-        <footer className="bg-gray-900 text-white py-12 px-4">
-          <div className="container mx-auto">
-            <div className="flex items-center justify-center">
-              <div>
-                <div className="flex items-center justify-center space-x-2 mb-4">
-                  <img
-                  src="/logo.svg"
-                  alt="Logo"
-                  className="w-32 h-12 object-contain "
-                />
-                </div>
-                <p className="text-gray-400">
-                  The ultimate Bitcoin ecosystem platform for enthusiasts,
-                  professionals, and businesses.
-                </p>
-              </div>
-            
-            </div>
-            <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-              <p>&copy; 2024 Coinlaa. All rights reserved.</p>
-            </div>
-          </div>
-        </footer>
+        <SiteFooter />
 
         {/* Auth Modal */}
         {showAuth && (
