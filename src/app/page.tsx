@@ -77,7 +77,7 @@ const features = [
   {
     id: 'bitcoin-connect',
     icon: HandHeart,
-    title: 'Bitcoin Connect',
+    title: 'Bitcoin Social',
     description: 'Connect with Bitcoin enthusiasts worldwide',
     color: 'text-orange-500',
     bgColor: 'bg-orange-50',
@@ -108,7 +108,7 @@ const features = [
         highlights: ['Monthly meetups', 'Conference alerts', 'Local chapters']
       }
     ],
-    stats: { posts: '2K+', groups: '50+', events: '100+' }
+    stats: { groups: '50+', events: '100+' }
   },
   {
     id: 'bitcoin-academy',
@@ -397,6 +397,42 @@ const features = [
       }
     ],
     stats: { articles: '200+/day', sources: '100+', alerts: '10K+' }
+  },
+  {
+    id: 'bitcoin-incubation',
+    icon: Rocket,
+    title: 'Bitcoin Incubation',
+    description: 'Launch and scale Bitcoin startups with expert guidance',
+    color: 'text-purple-500',
+    bgColor: 'bg-purple-50',
+    detailedDescription: 'Accelerate your Bitcoin startup journey with expert mentorship, technical resources, and investor access tailored for the Bitcoin ecosystem.',
+    subFeatures: [
+      {
+        title: 'Startup Accelerator',
+        description: 'Structured cohort-based programs driving rapid product and market validation.',
+        icon: Rocket,
+        highlights: ['12-week cohorts', 'Weekly mentor syncs', 'Demo day showcase']
+      },
+      {
+        title: 'Technical Guild',
+        description: 'Hands-on support for Lightning, wallet, and Bitcoin infrastructure integrations.',
+        icon: Lightbulb,
+        highlights: ['Architecture reviews', 'Security audits', 'Integration playbooks']
+      },
+      {
+        title: 'Funding Network',
+        description: 'Warm introductions to Bitcoin-focused angels, DAOs, and venture partners.',
+        icon: Target,
+        highlights: ['Investor matching', 'Pitch workshops', 'Term sheet guidance']
+      },
+      {
+        title: 'Go-To-Market Lab',
+        description: 'Strategic support for positioning, launches, and ecosystem partnerships.',
+        icon: Briefcase,
+        highlights: ['Growth roadmaps', 'Partnership pipelines', 'Media amplification']
+      }
+    ],
+    stats: { }
   }
 ]
 
@@ -491,18 +527,6 @@ export default function Home() {
                   className="w-32 h-12 object-contain "
                 />
               </div>
-              <nav className="hidden md:flex items-center">
-                <Button variant="ghost">Social</Button>
-                <Button variant="ghost">Academy</Button>
-                <Button variant="ghost">Jobs</Button>
-                <Button variant="ghost">Events</Button>
-                <Button variant="ghost">News</Button>
-                {/* <Button variant="ghost">Bitcoin GPTs</Button>
-                <Button variant="ghost">Influencers</Button>
-                <Button variant="ghost">Bitcoin Spaces</Button>
-                <Button variant="ghost">Bitcoin Marketplace</Button> */}
-                {/* <Button variant="ghost">Bitcoin Clock</Button> */}
-              </nav>
 
               <div className="flex items-center space-x-4">
                 {user ? (
