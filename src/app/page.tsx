@@ -217,7 +217,7 @@ const features = [
         highlights: ['Adaptive learning', 'Progress tracking', 'Quiz generation']
       }
     ],
-    stats: { tools: '20+', queries: '1K+', accuracy: '95%' }
+    stats: { tools: '20+', accuracy: '95%' }
   },
   {
     id: 'bitcoin-marketplace',
@@ -397,7 +397,7 @@ const features = [
         highlights: ['Expert analysis', 'Thought leadership', 'Community discussions']
       }
     ],
-    stats: { articles: '200+/day', sources: '100+', alerts: '10K+' }
+    stats: { articles: '20+/day', sources: '100+', alerts: '10+' }
   },
   {
     id: 'bitcoin-incubation',
@@ -433,7 +433,7 @@ const features = [
         highlights: ['Growth roadmaps', 'Partnership pipelines', 'Media amplification']
       }
     ],
-    stats: { startups: '30+', capital: '$60M+', mentors: '45+' }
+    stats: {}
   }
 ]
 
@@ -571,7 +571,7 @@ export default function Home() {
                 value={feature.id}
                 className="border border-gray-100 rounded-xl bg-white shadow-sm"
               >
-                <AccordionTrigger className="hover:no-underline group py-6 px-8 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-200">
+                <AccordionTrigger className="hover:no-underline group py-6 px-6">
                   <div className="flex items-center justify-between w-full pr-4">
                     <div className="flex items-center space-x-6">
                       <div className={`p-4 rounded-2xl ${feature.bgColor} group-hover:scale-110 transition-transform duration-200 shadow-sm`}>
@@ -597,58 +597,55 @@ export default function Home() {
                   </div>
                 </AccordionTrigger>
                 
-                <AccordionContent className="pt-6 px-8 pb-8">
-                  <div className="bg-white rounded-xl p-8 border border-gray-100 shadow-sm">
-                    {/* Detailed Description */}
-                    <div className="mb-10">
-                      <p className="text-lg text-gray-700 leading-relaxed">{feature.detailedDescription}</p>
-                    </div>
-                    
-                    {/* Sub-Features Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-                      {feature.subFeatures.map((subFeature, index) => (
-                        <div key={index} className="flex space-x-6">
-                          <div>
-                          <div className={`p-3 h-max rounded-xl ${feature.bgColor} flex-shrink-0 shadow-sm`}>
-                            <subFeature.icon className={`h-6 w-6 ${feature.color}`} />
-                          </div>
-                            </div>
-                          <div className="flex-1">
-                            <h4 className="font-bold text-gray-900 mb-3 text-lg">{subFeature.title}</h4>
-                            <p className="text-base text-gray-600 mb-4 leading-relaxed">{subFeature.description}</p>
-                            <div className="flex flex-wrap gap-2">
-                              {subFeature.highlights.map((highlight, highlightIndex) => (
-                                <div key={highlightIndex} className="flex items-center space-x-2 text-sm text-gray-600 bg-gray-50 px-3 py-2 rounded-full">
-                                  <CheckCircle className="h-4 w-4 text-green-500" />
-                                  <span>{highlight}</span>
-                                </div>
-                              ))}
-                            </div>
-                          </div>
+                <AccordionContent className="px-6 pb-6 pt-0 space-y-6 text-sm text-gray-600">
+                  <p className="text-base leading-relaxed text-gray-700">
+                    {feature.detailedDescription}
+                  </p>
+
+                  <div className="grid grid-cols-1 gap-5">
+                    {feature.subFeatures.map((subFeature, index) => (
+                      <div key={index} className="flex items-start gap-4">
+                        <div className={`p-3 rounded-xl ${feature.bgColor} shrink-0 shadow-sm`}>
+                          <subFeature.icon className={`h-5 w-5 ${feature.color}`} />
                         </div>
-                      ))}
-                    </div>
-                    
-                    {/* Stats Bar */}
-                    <div className="border-t pt-8">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center space-x-8">
-                          {Object.entries(feature.stats).map(([key, value]) => (
-                            <div key={key} className="flex items-center space-x-3">
-                              <div className={`w-3 h-3 rounded-full ${feature.color.replace('text', 'bg')}`}></div>
-                              <span className="text-base text-gray-600">
-                                <span className="font-bold text-gray-900 text-lg">{value}</span> {key}
+                        <div className="flex-1 space-y-2">
+                          <h4 className="text-base font-semibold text-gray-900">
+                            {subFeature.title}
+                          </h4>
+                          <p>{subFeature.description}</p>
+                          <div className="flex flex-wrap gap-2">
+                            {subFeature.highlights.map((highlight, highlightIndex) => (
+                              <span
+                                key={highlightIndex}
+                                className="text-xs bg-gray-100 text-gray-600 px-3 py-1 rounded-full"
+                              >
+                                {highlight}
                               </span>
-                            </div>
-                          ))}
+                            ))}
+                          </div>
                         </div>
-                        <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-base px-6 py-3">
-                          Explore {feature.title}
-                          <ArrowRight className="h-5 w-5 ml-2" />
-                        </Button>
                       </div>
-                    </div>
+                    ))}
                   </div>
+
+                  {Object.keys(feature.stats).length > 0 && (
+                    <div className="flex flex-wrap items-center justify-between gap-4 border-t border-gray-100 pt-4">
+                      <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600">
+                        {Object.entries(feature.stats).map(([key, value]) => (
+                          <span key={key} className="flex items-center gap-2">
+                            <span className={`inline-block h-2.5 w-2.5 rounded-full ${feature.color.replace('text', 'bg')}`}></span>
+                            <span>
+                              <span className="font-semibold text-gray-900">{value}</span> {key}
+                            </span>
+                          </span>
+                        ))}
+                      </div>
+                      <Button size="sm" className="bg-orange-500 hover:bg-orange-600 text-white">
+                        Explore {feature.title}
+                        <ArrowRight className="h-4 w-4 ml-2" />
+                      </Button>
+                    </div>
+                  )}
                 </AccordionContent>
               </AccordionItem>
             ))}
