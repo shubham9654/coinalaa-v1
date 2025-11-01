@@ -18,7 +18,6 @@ interface SiteHeaderProps {
 
 const navLinks = [
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
 ];
 
 export function SiteHeader({ user, onSignIn, onSignUp, onSignOut }: SiteHeaderProps) {
@@ -26,7 +25,6 @@ export function SiteHeader({ user, onSignIn, onSignUp, onSignOut }: SiteHeaderPr
 
   const currentPageLabel = (() => {
     if (pathname === "/about") return "About";
-    if (pathname === "/contact") return "Contact";
     return "Home";
   })();
 
