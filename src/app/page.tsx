@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
@@ -82,6 +83,7 @@ const features = [
     description: 'Connect with Bitcoin enthusiasts worldwide',
     color: 'text-orange-500',
     bgColor: 'bg-orange-50',
+    href: 'https://app.coinlaa.com/members/',
     detailedDescription: 'Join the largest Bitcoin community platform. Connect, share, and grow with like-minded Bitcoin enthusiasts from around the world.',
     subFeatures: [
       {
@@ -118,6 +120,7 @@ const features = [
     description: 'Learn Bitcoin from basics to advanced concepts',
     color: 'text-blue-500',
     bgColor: 'bg-blue-50',
+    href: 'https://app.coinlaa.com/courses/',
     detailedDescription: 'Master Bitcoin with comprehensive courses, tutorials, and certifications designed for all skill levels.',
     subFeatures: [
       {
@@ -154,6 +157,7 @@ const features = [
     description: 'Find Bitcoin-related career opportunities',
     color: 'text-green-500',
     bgColor: 'bg-green-50',
+    href: '/#bitcoin-jobs',
     detailedDescription: 'Discover career opportunities in the Bitcoin ecosystem. Connect with top companies building the future of finance.',
     subFeatures: [
       {
@@ -190,6 +194,7 @@ const features = [
     description: 'AI-powered Bitcoin tools and assistants',
     color: 'text-cyan-500',
     bgColor: 'bg-cyan-50',
+    href: 'https://app.coinlaa.com/courses/',
     detailedDescription: 'Leverage AI-powered tools for Bitcoin analysis, trading, and education. Get instant insights and assistance.',
     subFeatures: [
       {
@@ -226,6 +231,7 @@ const features = [
     description: 'Shop at trusted vendor stores accepting Bitcoin',
     color: 'text-green-600',
     bgColor: 'bg-green-50',
+    href: '/#bitcoin-marketplace',
     detailedDescription: 'Discover and shop from verified Bitcoin vendors. Buy products and services using Bitcoin with secure transactions.',
     subFeatures: [
       {
@@ -262,6 +268,7 @@ const features = [
     description: 'Follow leading Bitcoin voices and thought leaders',
     color: 'text-purple-500',
     bgColor: 'bg-purple-50',
+    href: '/#influencers',
     detailedDescription: 'Connect with and follow influential Bitcoin personalities. Get insights, analysis, and updates from trusted voices.',
     subFeatures: [
       {
@@ -298,6 +305,7 @@ const features = [
     description: 'Find Bitcoin businesses and services worldwide',
     color: 'text-yellow-500',
     bgColor: 'bg-yellow-50',
+    href: '/#bitcoin-spaces',
     detailedDescription: 'Discover Bitcoin-friendly businesses and services in your area and worldwide. Support the Bitcoin ecosystem.',
     subFeatures: [
       {
@@ -334,6 +342,7 @@ const features = [
     description: 'Discover Bitcoin meetups and conferences',
     color: 'text-purple-500',
     bgColor: 'bg-purple-50',
+    href: 'https://app.coinlaa.com/events/',
     detailedDescription: 'Find and attend Bitcoin events worldwide. Network with enthusiasts and learn from industry experts.',
     subFeatures: [
       {
@@ -370,6 +379,7 @@ const features = [
     description: 'Stay updated with latest Bitcoin news',
     color: 'text-red-500',
     bgColor: 'bg-red-50',
+    href: 'https://app.coinlaa.com/crypto-news/',
     detailedDescription: 'Get the latest Bitcoin news, analysis, and updates from trusted sources worldwide. Stay informed about the ecosystem.',
     subFeatures: [
       {
@@ -403,10 +413,11 @@ const features = [
     id: 'bitcoin-incubation',
     icon: Rocket,
     title: 'Bitcoin Incubation',
-    description: 'Launch and scale Bitcoin startups with expert guidance',
-    color: 'text-purple-500',
-    bgColor: 'bg-purple-50',
-    detailedDescription: 'Accelerate your Bitcoin startup journey with expert mentorship, technical resources, and investor access tailored for the Bitcoin ecosystem.',
+    description: 'Launch, accelerate, and scale Bitcoin ventures',
+    color: 'text-orange-600',
+    bgColor: 'bg-orange-50',
+    href: '/#bitcoin-incubation',
+    detailedDescription: 'Empowering founders with mentorship, capital, and growth resources to build impactful Bitcoin projects from idea to scale.',
     subFeatures: [
       {
         title: 'Startup Accelerator',
@@ -569,6 +580,7 @@ export default function Home() {
               <AccordionItem
                 key={feature.id}
                 value={feature.id}
+                id={feature.id}
                 className="border border-gray-100 rounded-xl bg-white shadow-sm"
               >
                 <AccordionTrigger className="hover:no-underline group py-6 px-6">
@@ -640,9 +652,15 @@ export default function Home() {
                           </span>
                         ))}
                       </div>
-                      <Button size="sm" className="bg-orange-500 hover:bg-orange-600 text-white">
-                        Explore {feature.title}
-                        <ArrowRight className="h-4 w-4 ml-2" />
+                      <Button
+                        asChild
+                        size="sm"
+                        className="bg-orange-500 hover:bg-orange-600 text-white"
+                      >
+                        <Link href={feature.href ?? `/#${feature.id}`}>
+                          Explore {feature.title}
+                          <ArrowRight className="h-4 w-4 ml-2" />
+                        </Link>
                       </Button>
                     </div>
                   )}
