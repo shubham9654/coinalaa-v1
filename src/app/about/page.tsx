@@ -8,20 +8,17 @@ const coreTeam = [
   {
     name: "Rahul Bachina",
     role: "Co-Founder & CTO",
-    image:
-      "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=300&h=300&fit=crop&crop=faces",
+    image: "/team/rahul-bachina.jpg",
   },
   {
     name: "Raj Muppala",
     role: "Co-Founder & CEO",
-    image:
-      "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?w=300&h=300&fit=crop&crop=faces",
+    image: "/team/raj-muppala.jpg",
   },
   {
     name: "Raj Muppala",
     role: "Co-Founder & CPO",
-    image:
-      "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=300&h=300&fit=crop&crop=faces",
+    image: "/team/raj-muppala.jpg",
   },
 ];
 
@@ -29,14 +26,12 @@ const advisors = [
   {
     name: "Hendrik Klein",
     role: "Principal Advisor - Investment",
-    image:
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=300&h=300&fit=crop&crop=faces",
+    image: "/team/hendrik-klein.jpg",
   },
   {
     name: "Pradeep Joglekar",
     role: "Principal Advisor - Partnerships",
-    image:
-      "https://images.unsplash.com/photo-1483412033650-1015ddeb83d1?w=300&h=300&fit=crop&crop=faces",
+    image: "/team/pradeep-joglekar.jpg",
   },
 ];
 
