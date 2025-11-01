@@ -657,7 +657,11 @@ export default function Home() {
                         size="sm"
                         className="bg-orange-500 hover:bg-orange-600 text-white"
                       >
-                        <Link href={feature.href ?? `/#${feature.id}`}>
+                        <Link
+                          href={feature.href ?? `/#${feature.id}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           Explore {feature.title}
                           <ArrowRight className="h-4 w-4 ml-2" />
                         </Link>
