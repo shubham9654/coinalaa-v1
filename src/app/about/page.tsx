@@ -16,9 +16,9 @@ const coreTeam = [
     image: "/team/raj-muppala.jpg",
   },
   {
-    name: "Raj Muppala",
+    name: "Siva Boppana",
     role: "Co-Founder & CPO",
-    image: "/team/raj-muppala.jpg",
+    image: "/team/siva-boppana.jpg",
   },
 ];
 
