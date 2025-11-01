@@ -91,7 +91,7 @@ export function SiteHeader({ user, onSignIn, onSignUp, onSignOut }: SiteHeaderPr
           </div>
 
           <div className="flex items-center gap-6">
-            <nav className="hidden md:flex items-center gap-4 text-sm font-medium text-gray-600">
+            <nav className="flex items-center gap-4 text-sm font-medium text-gray-600">
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
                 return (
