@@ -9,16 +9,20 @@ const coreTeam = [
     name: "Rahul Bachina",
     role: "Co-Founder & CTO",
     image: "/team/rahul-bachina.jpg",
+    bio: "2x founder and 22+ years in technology. Cap Gemini, Accenture, Microsoft, Bupa, Avanade, ",
   },
   {
     name: "Raj Muppala",
     role: "Co-Founder & CEO",
     image: "/team/raj-muppala.jpg",
+    bio: "3x founder and 20+ years in technology , AI and marketing. IBM , Deutsche Bank , Shell , Hitachi"
   },
+
   {
     name: "Siva Boppana",
     role: "Co-Founder & CPO",
     image: "/team/siva-boppana.jpg",
+    bio: "30+ years  in technology ",
   },
 ];
 
@@ -27,11 +31,13 @@ const advisors = [
     name: "Hendrik Klein",
     role: "Principal Advisor - Investment",
     image: "/team/hendrik-klein.jpg",
+    bio: "3x founder. 20 years in Trading. 15 years in crypto. Landesbank Baden, Da Vinci Capital Partners.",
   },
   {
     name: "Pradeep Joglekar",
     role: "Principal Advisor - Partnerships",
     image: "/team/pradeep-joglekar.jpg",
+    bio: "35+ years in leadership, Fintech . Citi, Hinduja Group, Hexaware, Cap Gemini",
   },
 ];
 
@@ -65,6 +71,9 @@ export default function AboutPage() {
                 />
                 <h3 className="text-lg font-semibold text-gray-900">{member.name}</h3>
                 <p className="text-sm text-orange-500 font-medium mb-3">{member.role}</p>
+                {member.bio && (
+                  <p className="text-sm text-gray-600 leading-relaxed mt-3">{member.bio}</p>
+                )}
               </div>
             ))}
           </div>
@@ -82,6 +91,9 @@ export default function AboutPage() {
                 />
                 <h3 className="text-lg font-semibold text-gray-900">{advisor.name}</h3>
                 <p className="text-sm text-orange-500 font-medium mb-3">{advisor.role}</p>
+                {advisor.bio && (
+                  <p className="text-sm text-gray-600 leading-relaxed mt-3">{advisor.bio}</p>
+                )}
               </div>
             ))}
           </div>

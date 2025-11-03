@@ -43,7 +43,7 @@ export function SiteHeader({ user, onSignIn, onSignUp, onSignOut }: SiteHeaderPr
 
     return (
       <Button variant="outline" size="sm" asChild>
-        <Link href="/">Sign In</Link>
+        <a href="https://app.coinlaa.com/login/" target="_self">Sign In</a>
       </Button>
     );
   };
@@ -71,7 +71,7 @@ export function SiteHeader({ user, onSignIn, onSignUp, onSignOut }: SiteHeaderPr
         className="bg-orange-500 hover:bg-orange-600 text-white"
         asChild
       >
-        <Link href="/">Sign Up</Link>
+        <a href="https://app.coinlaa.com/register/" target="_self">Sign Up</a>
       </Button>
     );
   };

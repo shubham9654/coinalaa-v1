@@ -3,6 +3,8 @@ import { setupSocket } from '@/lib/socket';
 import { createServer } from 'http';
 import { Server } from 'socket.io';
 import next from 'next';
+import { existsSync } from 'fs';
+import { join } from 'path';
 
 const dev = process.env.NODE_ENV !== 'production';
 const currentPort = 3000;
@@ -11,12 +13,21 @@ const hostname = '127.0.0.1';
 // Custom server with Socket.IO integration
 async function createCustomServer() {
   try {
+    // Check if .next directory and BUILD_ID exist in production
+    if (!dev) {
+      const buildIdPath = join(process.cwd(), '.next', 'BUILD_ID');
+      if (!existsSync(buildIdPath)) {
+        throw new Error(
+          'Could not find a production build in the \'.next\' directory. ' +
+          'Try building your app with \'next build\' before starting the production server.'
+        );
+      }
+    }
+
     // Create Next.js app
     const nextApp = next({ 
       dev,
       dir: process.cwd(),
-      // In production, use the current directory where .next is located
-      conf: dev ? undefined : { distDir: './.next' }
     });
 
     await nextApp.prepare();
