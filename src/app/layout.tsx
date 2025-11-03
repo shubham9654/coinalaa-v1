@@ -14,6 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://coinlaa.com"),
   title: "Coinlaa - The Ultimate Bitcoin Social Network",
   description: "Connect, trade, and succeed in the Bitcoin world. Join thousands of Bitcoin enthusiasts sharing insights, tracking markets, and building wealth together.",
   keywords: ["Coinlaa", "Bitcoin", "cryptocurrency", "social network", "trading", "Bitcoin marketplace", "Bitcoin learning", "crypto community", "blockchain", "Bitcoin jobs", "crypto events"],

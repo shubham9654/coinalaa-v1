@@ -268,7 +268,7 @@ const features = [
     description: 'Follow leading Bitcoin voices and thought leaders',
     color: 'text-purple-500',
     bgColor: 'bg-purple-50',
-    href: '/#influencers',
+    href: '/https://app.coinlaa.com/all-listings/',
     detailedDescription: 'Connect with and follow influential Bitcoin personalities. Get insights, analysis, and updates from trusted voices.',
     subFeatures: [
       {
@@ -305,7 +305,7 @@ const features = [
     description: 'Find Bitcoin businesses and services worldwide',
     color: 'text-yellow-500',
     bgColor: 'bg-yellow-50',
-    href: '/#bitcoin-spaces',
+    href: 'https://app.coinlaa.com/all-listings/',
     detailedDescription: 'Discover Bitcoin-friendly businesses and services in your area and worldwide. Support the Bitcoin ecosystem.',
     subFeatures: [
       {
@@ -416,7 +416,7 @@ const features = [
     description: 'Launch, accelerate, and scale Bitcoin ventures',
     color: 'text-orange-600',
     bgColor: 'bg-orange-50',
-    href: '/#bitcoin-incubation',
+    href: 'https://app.coinlaa.com/all-listings/',
     detailedDescription: 'Empowering founders with mentorship, capital, and growth resources to build impactful Bitcoin projects from idea to scale.',
     subFeatures: [
       {
@@ -554,8 +554,8 @@ export default function Home() {
               <Button size="lg" className="bg-orange-500 hover:bg-orange-600">
                 Get Started Free
               </Button>
-              <Button size="lg" variant="outline">
-                Explore Features
+              <Button size="lg" variant="outline" asChild>
+                <a href="https://app.coinlaa.com/" target="_self">Explore Features</a>
               </Button>
             </div>
           </div>
