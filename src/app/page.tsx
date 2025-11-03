@@ -640,8 +640,8 @@ export default function Home() {
                     ))}
                   </div>
 
-                  {Object.keys(feature.stats).length > 0 && (
-                    <div className="flex flex-wrap items-center justify-between gap-4 border-t border-gray-100 pt-4">
+                  <div className="flex flex-wrap items-center justify-between gap-4 border-t border-gray-100 pt-4">
+                    {Object.keys(feature.stats).length > 0 && (
                       <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600">
                         {Object.entries(feature.stats).map(([key, value]) => (
                           <span key={key} className="flex items-center gap-2">
@@ -652,22 +652,22 @@ export default function Home() {
                           </span>
                         ))}
                       </div>
-                      <Button
-                        asChild
-                        size="sm"
-                        className="bg-orange-500 hover:bg-orange-600 text-white"
+                    )}
+                    <Button
+                      asChild
+                      size="sm"
+                      className="bg-orange-500 hover:bg-orange-600 text-white"
+                    >
+                      <Link
+                        href={feature.href ?? `/#${feature.id}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
-                        <Link
-                          href={feature.href ?? `/#${feature.id}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Explore {feature.title}
-                          <ArrowRight className="h-4 w-4 ml-2" />
-                        </Link>
-                      </Button>
-                    </div>
-                  )}
+                        Explore {feature.title}
+                        <ArrowRight className="h-4 w-4 ml-2" />
+                      </Link>
+                    </Button>
+                  </div>
                 </AccordionContent>
               </AccordionItem>
             ))}
