@@ -268,7 +268,7 @@ const features = [
     description: 'Follow leading Bitcoin voices and thought leaders',
     color: 'text-purple-500',
     bgColor: 'bg-purple-50',
-    href: '/https://app.coinlaa.com/all-listings/',
+    href: 'https://app.coinlaa.com/all-listings/',
     detailedDescription: 'Connect with and follow influential Bitcoin personalities. Get insights, analysis, and updates from trusted voices.',
     subFeatures: [
       {
@@ -654,7 +654,7 @@ export default function Home() {
                     <Button
                       asChild
                       size="sm"
-                      className="bg-orange-500 hover:bg-orange-600 text-white"
+                      className="bg-orange-500 hover:bg-orange-600 text-white ml-auto"
                     >
                       <Link
                         href={feature.href ?? `/#${feature.id}`}
