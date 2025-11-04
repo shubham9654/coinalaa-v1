@@ -54,8 +54,8 @@ export default function AboutPage() {
           <p className="text-lg text-gray-600 leading-relaxed mb-8">
             Coinlaa unites community, education, and commerce to accelerate Bitcoin adoption. Our mission is to make Bitcoin tools accessible for every builder, creator, and business.
           </p>
-          <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white">
-            Join the Coinlaa Community
+          <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white" asChild>
+            <a href="http://app.coinlaa.com/" target="_self">Join the Coinlaa Community</a>
           </Button>
         </section>
 
