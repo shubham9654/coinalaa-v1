@@ -121,11 +121,11 @@
   }
 }
 
-.features-accordion [data-radix-accordion-item] {
+.features-accordion [data-slot="accordion-item"] {
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.features-accordion [data-radix-accordion-item][data-state="open"] {
+.features-accordion [data-slot="accordion-item"][data-state="open"] {
   grid-column: 1 / -1;
   box-shadow: 0 12px 32px -16px rgba(15, 23, 42, 0.3);
 }

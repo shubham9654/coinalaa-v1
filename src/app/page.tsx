@@ -530,8 +530,6 @@ export default function Home() {
       <div className="relative z-10 bg-gradient-to-br from-orange-50/30 to-white/30">
         <SiteHeader
           user={user ? { name: user.name } : null}
-          onSignIn={() => setShowAuth(true)}
-          onSignUp={() => setShowAuth(true)}
           onSignOut={handleSignOut}
         />
 
@@ -583,8 +581,8 @@ export default function Home() {
                 id={feature.id}
                 className="border border-gray-100 rounded-xl bg-white shadow-sm"
               >
-                <AccordionTrigger className="hover:no-underline group py-6 px-6">
-                  <div className="flex items-center justify-between w-full pr-4">
+                <AccordionTrigger className="hover:no-underline group py-6 px-6 w-full">
+                  <div className="flex items-center justify-between w-full pr-4 pointer-events-none">
                     <div className="flex items-center space-x-6">
                       <div className={`p-4 rounded-2xl ${feature.bgColor} group-hover:scale-110 transition-transform duration-200 shadow-sm`}>
                         <feature.icon className={`h-8 w-8 ${feature.color}`} />
@@ -609,12 +607,12 @@ export default function Home() {
                   </div>
                 </AccordionTrigger>
                 
-                <AccordionContent className="px-6 pb-6 pt-0 space-y-6 text-sm text-gray-600">
+                <AccordionContent className="px-6 pb-6 pt-0 space-y-6 text-sm text-gray-600 w-full">
                   <p className="text-base leading-relaxed text-gray-700">
                     {feature.detailedDescription}
                   </p>
 
-                  <div className="grid grid-cols-1 gap-5">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     {feature.subFeatures.map((subFeature, index) => (
                       <div key={index} className="flex items-start gap-4">
                         <div className={`p-3 rounded-xl ${feature.bgColor} shrink-0 shadow-sm`}>
