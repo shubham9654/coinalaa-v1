@@ -234,7 +234,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative p4-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-b to-white from-[#FFECE6]/50">
         {/* Background Graphics - Hidden on mobile, shown on tablet+ */}
-        <div className="hidden md:block absolute right-0 top-0 w-1/2 lg:w-2/5 xl:w-1/2 h-full pointer-events-none">
+        <div className="hidden md:block absolute right-20 top-0 w-1/2 lg:w-2/5 xl:w-1/2 h-full pointer-events-none">
           <img 
             src="/background-graphics.png" 
             alt="Background Graphics" 

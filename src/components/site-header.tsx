@@ -98,8 +98,7 @@ export function SiteHeader({ user, onSignIn, onSignUp, onSignOut }: SiteHeaderPr
             </Link>
           </div>
 
-          <div className="flex items-center gap-2 sm:gap-4 md:gap-6">
-            <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-4">
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
                 <Input
@@ -109,6 +108,9 @@ export function SiteHeader({ user, onSignIn, onSignUp, onSignOut }: SiteHeaderPr
                 />
               </div>
             </div>
+
+          <div className="flex items-center gap-2 sm:gap-4 md:gap-6">
+            
             
             <nav className="hidden sm:flex items-center gap-3 md:gap-4 text-sm font-medium text-gray-600">
               {navLinks.map((link) => {
