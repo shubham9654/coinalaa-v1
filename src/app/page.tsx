@@ -10,14 +10,14 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
-import { 
-  Bitcoin, 
-  Users, 
-  GraduationCap, 
-  Briefcase, 
-  Calendar, 
-  Newspaper, 
-  Bot, 
+import {
+  Bitcoin,
+  Users,
+  GraduationCap,
+  Briefcase,
+  Calendar,
+  Newspaper,
+  Bot,
   Globe,
   Building,
   Rocket,
@@ -232,23 +232,15 @@ export default function Home() {
       />
 
       {/* Hero Section */}
-      <section className="relative p4-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-b to-white from-[#FFECE6]/50">
-        {/* Background Graphics - Hidden on mobile, shown on tablet+ */}
-        <div className="hidden md:block absolute right-20 top-0 w-1/2 lg:w-2/5 xl:w-1/2 h-full pointer-events-none">
-          <img 
-            src="/background-graphics.png" 
-            alt="Background Graphics" 
-            className="w-full h-full object-contain object-right"
-            loading="lazy"
-          />
-        </div>
+      <section className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-b to-white from-[#FFECE6]/50  ">
 
-        <div className="md:mx-20 max-w-6xl relative z-10">
-          <div className="max-w-2xl mx-auto md:mx-0">
+        <div className="container mx-auto  px-4 sm:px-20 relative z-10 grid grid-cols-1 md:grid-cols-2">
+
+          <div className="">
             {/* AI-Powered Badge */}
             <div className="flex items-center gap-2 mb-4 sm:mb-6 justify-center md:justify-start">
-              <Badge 
-                variant="outline" 
+              <Badge
+                variant="outline"
                 className="border-gray-300 text-gray-700 bg-white px-3 sm:px-4 py-1 sm:py-1.5 text-xs sm:text-sm font-medium"
               >
                 <Zap className="h-3 w-3 sm:h-3.5 sm:w-3.5 mr-1 sm:mr-1.5 text-gray-600" />
@@ -257,22 +249,23 @@ export default function Home() {
             </div>
 
             {/* Main Title */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight text-center md:text-left">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.7vw] font-bold text-gray-900 mb-4 sm:mb-6 text-center md:text-left">
               The Ultimate{" "}
-              <span className="text-orange-500">Bitcoin</span>{" "}
+              <span className="text-[10vw] text-orange-500">Bitcoin</span>{" "}
+              <br />
               Hub
             </h1>
 
             {/* Description */}
             <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 md:mb-10 leading-relaxed text-center md:text-left px-4 sm:px-0">
-              Connect, Learn, Work, and Grow in the Bitcoin ecosystem. Everything you need in one place.
+              Connect, Learn, Work, and Grow in the Bitcoin ecosystem. <br /> Everything you need in one place.
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 justify-center md:justify-start px-4 sm:px-0">
-              <Button 
-                size="lg" 
-                variant="outline" 
+              <Button
+                size="lg"
+                variant="outline"
                 className="bg-gray-900 text-white border-gray-900 hover:bg-gray-800 h-11 sm:h-12 px-5 sm:px-6 text-sm sm:text-base w-full sm:w-auto"
                 asChild
               >
@@ -280,9 +273,9 @@ export default function Home() {
                   Get Started Free <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5 ml-2 inline" />
                 </a>
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
+              <Button
+                size="lg"
+                variant="outline"
                 className="border-gray-300 text-gray-700 hover:bg-gray-50 h-11 sm:h-12 px-5 sm:px-6 text-sm sm:text-base w-full sm:w-auto"
                 asChild
               >
@@ -292,20 +285,31 @@ export default function Home() {
               </Button>
             </div>
           </div>
+
+          <div className="hidden md:flex pointer-events-none  justify-end">
+            <img
+              src="/background-graphics.png"
+              alt="Background Graphics"
+              className="w-full h-full object-contain object-right"
+              loading="lazy"
+            />
+          </div>
         </div>
+
+
       </section>
-      
+
 
       {/* Complete Bitcoin Ecosystem Section */}
       <section className="mt-5 pb-12 sm:pb-16 px-4 sm:px-6 bg-white">
-        <div className="container mx-auto max-w-6xl ">
+        <div className="container mx-auto px-0 sm:px-20">
           {/* Header Card */}
-          <div className="md:mx-40 mb-8 sm:mb-10 md:my-20 relative z-20">
+          <div className="md:mx-80 mb-8 sm:mb-10 md:mb-12 lg:mb-16 -mt-8 sm:-mt-12 md:-mt-16 lg:-mt-20 relative z-20">
             <Card className="border-0 md:border border-[#F06623]/30 rounded-2xl sm:rounded-3xl shadow-none md:shadow-lg overflow-visible bg-white">
-              <CardContent className="px-6 sm:px-8 md:px-12">
+              <CardContent className="px-6 sm:px-8 md:px-10 lg:px-12">
                 <div className="flex flex-col md:flex-row items-center md:items-center gap-6 sm:gap-8">
-                 
-                  
+
+
                   {/* Text Content */}
                   <div className="flex-1">
                     <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-6 text-center">
@@ -326,11 +330,11 @@ export default function Home() {
               </CardContent>
             </Card>
           </div>
-          
+
           <Accordion type="single" collapsible className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
             {features.map((feature) => {
               const Icon = feature.icon;
-              
+
               // Color mapping for each feature
               const colorClasses: Record<string, { bg: string; text: string }> = {
                 orange: { bg: 'bg-orange-50', text: 'text-orange-500' },
@@ -342,9 +346,9 @@ export default function Home() {
                 yellow: { bg: 'bg-yellow-50', text: 'text-yellow-500' },
                 red: { bg: 'bg-red-50', text: 'text-red-500' },
               };
-              
+
               const colors = colorClasses[feature.color] || colorClasses.orange;
-              
+
               return (
                 <AccordionItem
                   key={feature.id}
@@ -354,22 +358,29 @@ export default function Home() {
                   <AccordionTrigger className="p-5 sm:p-6 hover:no-underline [&>svg]:hidden">
                     <div className="w-full">
                       {/* Top Section: Icon, Title, Stats */}
-                      <div className="flex items-start justify-between gap-4 mb-3">
-                        <div className="flex items-start gap-4 flex-1 min-w-0 pr-4">
-                          <div className={`${colors.bg} p-3 rounded-lg flex-shrink-0`}>
-                            <Icon className={`h-6 w-6 sm:h-7 sm:w-7 ${colors.text}`} />
+                      <div className="flex items-start justify-between gap-3 sm:gap-4 mb-3 relative">
+                        <div className="flex items-start gap-3 sm:gap-4 flex-1 min-w-0 pr-2 sm:pr-4">
+                          <div className={`${colors.bg} p-2.5 sm:p-3 rounded-lg flex-shrink-0`}>
+                            <Icon className={`h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 ${colors.text}`} />
                           </div>
-                          
+                          <div className="flex-1 min-w-0">
+                            <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-1.5 sm:mb-2 leading-tight">
+                              {feature.title}
+                            </h3>
+                            <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
+                              {feature.description}
+                            </p>
+                          </div>
                         </div>
                         {/* Stats in top-right */}
                         {Object.keys(feature.stats).length > 0 && (
-                          <div className="flex gap-x-2">
+                          <div className="flex gap-x-2 sm:gap-x-3 flex-shrink-0">
                             {Object.entries(feature.stats).map(([key, value]) => (
                               <div key={key} className="text-right whitespace-nowrap">
-                                <div className="text-[20px] font-semibold text-gray-900 leading-tight">
+                                <div className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-900 leading-tight">
                                   {value}
                                 </div>
-                                <div className="text-[14px] text-[#818181] font-R">
+                                <div className="text-xs sm:text-sm text-[#818181]">
                                   {key}
                                 </div>
                               </div>
@@ -377,23 +388,13 @@ export default function Home() {
                           </div>
                         )}
                       </div>
-                      <div>
-                      <div className="flex-1 min-w-0">
-                            <h3 className="text-base sm:text-[24px] font-bold text-gray-900 mb-1.5 sm:mb-2">
-                              {feature.title}
-                            </h3>
-                            <p className="text-[16px] text-gray-600 leading-relaxed">
-                              {feature.description}
-                            </p>
-                          </div>
-                      </div>
-                      
+
                       {/* Border bottom with #F06623 color - aligned with text content */}
                       <div className="flex items-center justify-between mt-4">
                         <div className="flex-1 border-b-2 border-transparent group-hover:border-[#F06623] transition-colors duration-200"></div>
                         {/* Chevron on the right with #F06623 color */}
-                        <ChevronDown 
-                          className="h-5 w-5 ml-3 flex-shrink-0 transition-transform duration-200 group-data-[state=open]:rotate-180" 
+                        <ChevronDown
+                          className="h-5 w-5 ml-3 flex-shrink-0 transition-transform duration-200 group-data-[state=open]:rotate-180"
                           style={{ color: '#F06623' }}
                         />
                       </div>
@@ -410,12 +411,12 @@ export default function Home() {
                             const SubIcon = subFeature.icon;
                             return (
                               <div key={idx} className="flex items-start gap-3 p-3 sm:p-4 bg-gray-50 rounded-lg">
-                                <SubIcon className="h-5 w-5 text-orange-600 flex-shrink-0 mt-0.5" />
+                                <SubIcon className="h-4 w-4 sm:h-5 sm:w-5 text-orange-600 flex-shrink-0 mt-0.5" />
                                 <div>
-                                  <h4 className="text-sm font-semibold text-gray-900 mb-1">
+                                  <h4 className="text-xs sm:text-sm font-semibold text-gray-900 mb-1">
                                     {subFeature.title}
                                   </h4>
-                                  <p className="text-xs text-gray-600">
+                                  <p className="text-xs text-gray-600 leading-relaxed">
                                     {subFeature.description}
                                   </p>
                                 </div>
