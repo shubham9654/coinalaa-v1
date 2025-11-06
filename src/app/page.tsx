@@ -58,7 +58,7 @@ const features = [
   {
     id: 'bitcoin-social',
     icon: Users,
-    title: 'Bitcoin Social',
+    title: 'Social',
     description: 'Connect with Bitcoin enthusiasts worldwide',
     stats: { groups: '50+', events: '100+' },
     href: 'https://app.coinlaa.com/crypto-agents/',
@@ -74,7 +74,7 @@ const features = [
   {
     id: 'bitcoin-academy',
     icon: GraduationCap,
-    title: 'Bitcoin Academy',
+    title: 'Academy',
     description: 'Learn Bitcoin from basics to advanced concepts',
     stats: { courses: '100+' },
     href: 'https://app.coinlaa.com/courses/',
@@ -90,7 +90,7 @@ const features = [
   {
     id: 'bitcoin-jobs',
     icon: Briefcase,
-    title: 'Bitcoin Jobs',
+    title: 'Jobs',
     description: 'Find Bitcoin-related career opportunities',
     stats: {},
     href: 'https://app.coinlaa.com/bitcoin-jobs/',
@@ -106,7 +106,7 @@ const features = [
   {
     id: 'bitcoin-gpts',
     icon: Bot,
-    title: 'Bitcoin GPTs',
+    title: 'GPTs',
     description: 'AI-powered Bitcoin tools and assistants',
     stats: { tools: '20+', accuracy: '95%' },
     href: 'https://app.coinlaa.com/ai-tools/',
@@ -122,7 +122,7 @@ const features = [
   {
     id: 'bitcoin-marketplace',
     icon: Store,
-    title: 'Bitcoin Marketplace',
+    title: 'Marketplace',
     description: 'Shop at trusted vendor stores accepting Bitcoin',
     stats: { products: '100+' },
     href: 'https://app.coinlaa.com/all-listings/?directory_type=bitcoin-business',
@@ -154,7 +154,7 @@ const features = [
   {
     id: 'bitcoin-spaces',
     icon: Globe,
-    title: 'Bitcoin Spaces',
+    title: 'Spaces',
     description: 'Find Bitcoin businesses and services worldwide',
     stats: {},
     href: 'https://app.coinlaa.com/all-listings/',
@@ -170,7 +170,7 @@ const features = [
   {
     id: 'bitcoin-events',
     icon: Calendar,
-    title: 'Bitcoin Events',
+    title: 'Events',
     description: 'Discover Bitcoin meetups and conferences',
     stats: { events: '10+/month' },
     href: 'https://app.coinlaa.com/event/',
@@ -186,7 +186,7 @@ const features = [
   {
     id: 'bitcoin-news',
     icon: Newspaper,
-    title: 'Bitcoin News',
+    title: 'News',
     description: 'Stay updated with latest Bitcoin news and insights',
     stats: { articles: '20+/day', sources: '100+', alerts: '10+' },
     href: 'https://app.coinlaa.com/crypto-news/',
@@ -202,7 +202,7 @@ const features = [
   {
     id: 'bitcoin-incubation',
     icon: Rocket,
-    title: 'Bitcoin Incubation',
+    title: 'Incubation',
     description: 'Support and grow Bitcoin startups',
     stats: {},
     href: 'https://app.coinlaa.com/incubator/',
@@ -304,15 +304,15 @@ export default function Home() {
       <section className="mt-5 pb-12 sm:pb-16 px-4 sm:px-6 bg-white">
         <div className="container mx-auto px-0 sm:px-20">
           {/* Header Card */}
-          <div className="md:mx-80 mb-8 sm:mb-10 md:mb-12 lg:mb-16 -mt-8 sm:-mt-12 md:-mt-16 lg:-mt-20 relative z-20">
-            <Card className="border-0 md:border border-[#F06623]/30 rounded-2xl sm:rounded-3xl shadow-none md:shadow-lg overflow-visible bg-white">
-              <CardContent className="px-6 sm:px-8 md:px-10 lg:px-12">
+          <div className="max-w-4xl mx-auto mb-8 sm:mb-10 md:mb-12 lg:mb-16 -mt-8 sm:-mt-12 md:-mt-16 lg:-mt-20 relative z-20">
+            <Card className="border-0 md:border md:border-gray-200 hover:border hover:border-[#F06623]/30 rounded-2xl sm:rounded-[20px] shadow-none md:shadow-lg hover:!shadow-lg transition-all duration-300 overflow-visible bg-white">
+              <CardContent className="px-6 sm:px-0">
                 <div className="flex flex-col md:flex-row items-center md:items-center gap-6 sm:gap-8">
 
 
                   {/* Text Content */}
                   <div className="flex-1">
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-6 text-center">
+                    <h2 className="text-2xl sm:text-3xl md:text-[2.64vw] font-bold text-gray-900 mb-3 sm:mb-6 text-center">
                       Complete{" "}
                       <span className="text-[#F06623]">Bitcoin</span>{" "}
                       Ecosystem
