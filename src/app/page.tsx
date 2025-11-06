@@ -232,7 +232,7 @@ export default function Home() {
       />
 
       {/* Hero Section */}
-      <section className="relative py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-b to-white from-[#FFECE6]/50">
+      <section className="relative p4-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-b to-white from-[#FFECE6]/50">
         {/* Background Graphics - Hidden on mobile, shown on tablet+ */}
         <div className="hidden md:block absolute right-0 top-0 w-1/2 lg:w-2/5 xl:w-1/2 h-full pointer-events-none">
           <img 
@@ -300,7 +300,7 @@ export default function Home() {
       <section className="pb-12 sm:pb-16 px-4 sm:px-6 bg-white">
         <div className="container mx-auto max-w-6xl ">
           {/* Header Card */}
-          <div className="mx-40 mb-8 sm:mb-10 md:mb-12 relative z-20">
+          <div className="mx-40 mb-8 sm:mb-10 md:my-20 relative z-20">
             <Card className="border border-[#F06623]/30 rounded-2xl sm:rounded-3xl shadow-lg overflow-visible bg-white">
               <CardContent className="px-6 sm:px-8 md:px-12">
                 <div className="flex flex-col md:flex-row items-center md:items-center gap-6 sm:gap-8">
@@ -359,24 +359,17 @@ export default function Home() {
                           <div className={`${colors.bg} p-3 rounded-lg flex-shrink-0`}>
                             <Icon className={`h-6 w-6 sm:h-7 sm:w-7 ${colors.text}`} />
                           </div>
-                          <div className="flex-1 min-w-0">
-                            <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1.5 sm:mb-2">
-                              {feature.title}
-                            </h3>
-                            <p className="text-sm text-gray-600 leading-relaxed">
-                              {feature.description}
-                            </p>
-                          </div>
+                          
                         </div>
                         {/* Stats in top-right */}
                         {Object.keys(feature.stats).length > 0 && (
-                          <div className="flex flex-col items-end gap-1 flex-shrink-0">
+                          <div className="flex gap-x-2">
                             {Object.entries(feature.stats).map(([key, value]) => (
                               <div key={key} className="text-right whitespace-nowrap">
-                                <div className="text-sm font-semibold text-gray-900 leading-tight">
+                                <div className="text-[20px] font-semibold text-gray-900 leading-tight">
                                   {value}
                                 </div>
-                                <div className="text-xs text-gray-500">
+                                <div className="text-[14px] text-[#818181] font-R">
                                   {key}
                                 </div>
                               </div>
@@ -384,10 +377,20 @@ export default function Home() {
                           </div>
                         )}
                       </div>
+                      <div>
+                      <div className="flex-1 min-w-0">
+                            <h3 className="text-base sm:text-[24px] font-bold text-gray-900 mb-1.5 sm:mb-2">
+                              {feature.title}
+                            </h3>
+                            <p className="text-[16px] text-gray-600 leading-relaxed">
+                              {feature.description}
+                            </p>
+                          </div>
+                      </div>
                       
                       {/* Border bottom with #F06623 color - aligned with text content */}
-                      <div className="flex items-center justify-between mt-4 mb-3">
-                        <div className="flex-1 border-b-2" style={{ borderColor: '#F06623' }}></div>
+                      <div className="flex items-center justify-between mt-4">
+                        <div className="flex-1 border-b-2 border-transparent group-hover:border-[#F06623] transition-colors duration-200"></div>
                         {/* Chevron on the right with #F06623 color */}
                         <ChevronDown 
                           className="h-5 w-5 ml-3 flex-shrink-0 transition-transform duration-200 group-data-[state=open]:rotate-180" 
