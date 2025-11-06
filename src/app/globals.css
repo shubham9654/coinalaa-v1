@@ -123,9 +123,26 @@
 
 .features-accordion [data-slot="accordion-item"] {
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  display: grid;
 }
 
 .features-accordion [data-slot="accordion-item"][data-state="open"] {
   grid-column: 1 / -1;
   box-shadow: 0 12px 32px -16px rgba(15, 23, 42, 0.3);
+}
+
+.features-accordion [data-slot="accordion-trigger"] {
+  width: 100%;
+}
+
+.features-accordion [data-slot="accordion-item"][data-state="open"] .accordion-chevron {
+  transform: rotate(180deg);
+}
+
+.features-accordion [data-slot="accordion-item"][data-state="open"] .border-b-2 {
+  border-color: rgb(249 115 22) !important;
+}
+
+.features-accordion [data-slot="accordion-item"][data-state="open"] .accordion-chevron {
+  color: rgb(249 115 22) !important;
 }
