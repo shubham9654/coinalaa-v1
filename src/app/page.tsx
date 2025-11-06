@@ -297,24 +297,24 @@ export default function Home() {
       
 
       {/* Complete Bitcoin Ecosystem Section */}
-      <section className="pb-12 sm:pb-16 px-4 sm:px-6 bg-white">
+      <section className="mt-5 pb-12 sm:pb-16 px-4 sm:px-6 bg-white">
         <div className="container mx-auto max-w-6xl ">
           {/* Header Card */}
-          <div className="mx-40 mb-8 sm:mb-10 md:my-20 relative z-20">
-            <Card className="border border-[#F06623]/30 rounded-2xl sm:rounded-3xl shadow-lg overflow-visible bg-white">
+          <div className="md:mx-40 mb-8 sm:mb-10 md:my-20 relative z-20">
+            <Card className="border-0 md:border border-[#F06623]/30 rounded-2xl sm:rounded-3xl shadow-none md:shadow-lg overflow-visible bg-white">
               <CardContent className="px-6 sm:px-8 md:px-12">
                 <div className="flex flex-col md:flex-row items-center md:items-center gap-6 sm:gap-8">
                  
                   
                   {/* Text Content */}
                   <div className="flex-1">
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 text-center">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-6 text-center">
                       Complete{" "}
                       <span className="text-[#F06623]">Bitcoin</span>{" "}
                       Ecosystem
                     </h2>
-                    <div className="space-y-1 sm:space-y-2">
-                      <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
+                    <div className="space-y-1 sm:space-y-2 text-center">
+                      <p className="mb-0 text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
                         Explore our comprehensive suite of Bitcoin tools and services.
                       </p>
                       <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
