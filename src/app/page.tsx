@@ -61,7 +61,7 @@ const features = [
     title: 'Bitcoin Social',
     description: 'Connect with Bitcoin enthusiasts worldwide',
     stats: { groups: '50+', events: '100+' },
-    href: 'https://app.coinlaa.com/members/',
+    href: 'https://app.coinlaa.com/crypto-agents/',
     color: 'orange',
     detailedDescription: 'Join the largest Bitcoin community platform. Connect, share, and grow with like-minded Bitcoin enthusiasts from around the world.',
     subFeatures: [
@@ -93,7 +93,7 @@ const features = [
     title: 'Bitcoin Jobs',
     description: 'Find Bitcoin-related career opportunities',
     stats: {},
-    href: 'https://app.coinlaa.com/',
+    href: 'https://app.coinlaa.com/bitcoin-jobs/',
     color: 'green',
     detailedDescription: 'Discover career opportunities in the Bitcoin ecosystem. Connect with top companies building the future of finance.',
     subFeatures: [
@@ -109,7 +109,7 @@ const features = [
     title: 'Bitcoin GPTs',
     description: 'AI-powered Bitcoin tools and assistants',
     stats: { tools: '20+', accuracy: '95%' },
-    href: 'https://app.coinlaa.com/courses/',
+    href: 'https://app.coinlaa.com/ai-tools/',
     color: 'teal',
     detailedDescription: 'Leverage AI-powered tools for Bitcoin analysis, trading, and education. Get instant insights and assistance.',
     subFeatures: [
@@ -125,7 +125,7 @@ const features = [
     title: 'Bitcoin Marketplace',
     description: 'Shop at trusted vendor stores accepting Bitcoin',
     stats: { products: '100+' },
-    href: 'https://app.coinlaa.com/',
+    href: 'https://app.coinlaa.com/all-listings/?directory_type=bitcoin-business',
     color: 'emerald',
     detailedDescription: 'Discover and shop from verified Bitcoin vendors. Buy products and services using Bitcoin with secure transactions.',
     subFeatures: [
@@ -141,7 +141,7 @@ const features = [
     title: 'Influencers',
     description: 'Follow leading Bitcoin voices and thought leaders',
     stats: { engagement: '85%' },
-    href: 'https://app.coinlaa.com/all-listings/',
+    href: 'https://app.coinlaa.com/all-listings/?directory_type=influencers',
     color: 'purple',
     detailedDescription: 'Connect with and follow influential Bitcoin personalities. Get insights, analysis, and updates from trusted voices.',
     subFeatures: [
@@ -173,7 +173,7 @@ const features = [
     title: 'Bitcoin Events',
     description: 'Discover Bitcoin meetups and conferences',
     stats: { events: '10+/month' },
-    href: 'https://app.coinlaa.com/',
+    href: 'https://app.coinlaa.com/event/',
     color: 'red',
     detailedDescription: 'Stay updated with Bitcoin events, conferences, and meetups happening around the world.',
     subFeatures: [
@@ -189,7 +189,7 @@ const features = [
     title: 'Bitcoin News',
     description: 'Stay updated with latest Bitcoin news and insights',
     stats: { articles: '20+/day', sources: '100+', alerts: '10+' },
-    href: 'https://app.coinlaa.com/',
+    href: 'https://app.coinlaa.com/crypto-news/',
     color: 'red',
     detailedDescription: 'Get the latest Bitcoin news, analysis, and insights from trusted sources. Stay informed about market trends and developments.',
     subFeatures: [
@@ -205,7 +205,7 @@ const features = [
     title: 'Bitcoin Incubation',
     description: 'Support and grow Bitcoin startups',
     stats: {},
-    href: 'https://app.coinlaa.com/',
+    href: 'https://app.coinlaa.com/incubator/',
     color: 'teal',
     detailedDescription: 'Support Bitcoin startups and innovations. Connect with investors, mentors, and entrepreneurs in the Bitcoin ecosystem.',
     subFeatures: [
