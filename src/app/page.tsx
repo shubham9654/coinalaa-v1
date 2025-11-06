@@ -1,10 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   Accordion,
   AccordionItem,
@@ -63,6 +62,7 @@ const features = [
     description: 'Connect with Bitcoin enthusiasts worldwide',
     stats: { groups: '50+', events: '100+' },
     href: 'https://app.coinlaa.com/members/',
+    color: 'orange',
     detailedDescription: 'Join the largest Bitcoin community platform. Connect, share, and grow with like-minded Bitcoin enthusiasts from around the world.',
     subFeatures: [
       { title: 'Community Feed', description: 'Real-time updates from Bitcoin enthusiasts', icon: MessageSquare },
@@ -78,6 +78,7 @@ const features = [
     description: 'Learn Bitcoin from basics to advanced concepts',
     stats: { courses: '100+' },
     href: 'https://app.coinlaa.com/courses/',
+    color: 'blue',
     detailedDescription: 'Master Bitcoin with comprehensive courses, tutorials, and certifications designed for all skill levels.',
     subFeatures: [
       { title: 'Video Courses', description: 'High-quality video tutorials from Bitcoin experts', icon: Video },
@@ -93,6 +94,7 @@ const features = [
     description: 'Find Bitcoin-related career opportunities',
     stats: {},
     href: 'https://app.coinlaa.com/',
+    color: 'green',
     detailedDescription: 'Discover career opportunities in the Bitcoin ecosystem. Connect with top companies building the future of finance.',
     subFeatures: [
       { title: 'Job Board', description: 'Curated Bitcoin and crypto job listings', icon: Briefcase },
@@ -108,6 +110,7 @@ const features = [
     description: 'AI-powered Bitcoin tools and assistants',
     stats: { tools: '20+', accuracy: '95%' },
     href: 'https://app.coinlaa.com/courses/',
+    color: 'teal',
     detailedDescription: 'Leverage AI-powered tools for Bitcoin analysis, trading, and education. Get instant insights and assistance.',
     subFeatures: [
       { title: 'Bitcoin Assistant', description: 'AI chatbot for Bitcoin questions and guidance', icon: Bot },
@@ -123,6 +126,7 @@ const features = [
     description: 'Shop at trusted vendor stores accepting Bitcoin',
     stats: { products: '100+' },
     href: 'https://app.coinlaa.com/',
+    color: 'emerald',
     detailedDescription: 'Discover and shop from verified Bitcoin vendors. Buy products and services using Bitcoin with secure transactions.',
     subFeatures: [
       { title: 'Vendor Shops', description: 'Verified Bitcoin-accepting stores', icon: Store },
@@ -138,6 +142,7 @@ const features = [
     description: 'Follow leading Bitcoin voices and thought leaders',
     stats: { engagement: '85%' },
     href: 'https://app.coinlaa.com/all-listings/',
+    color: 'purple',
     detailedDescription: 'Connect with and follow influential Bitcoin personalities. Get insights, analysis, and updates from trusted voices.',
     subFeatures: [
       { title: 'Influencer Profiles', description: 'Detailed profiles of Bitcoin thought leaders', icon: UserCheck },
@@ -153,6 +158,7 @@ const features = [
     description: 'Find Bitcoin businesses and services worldwide',
     stats: {},
     href: 'https://app.coinlaa.com/all-listings/',
+    color: 'yellow',
     detailedDescription: 'Discover Bitcoin-friendly businesses and services in your area and worldwide. Support the Bitcoin ecosystem.',
     subFeatures: [
       { title: 'Business Directory', description: 'Comprehensive listing of Bitcoin businesses', icon: Building2 },
@@ -165,9 +171,10 @@ const features = [
     id: 'bitcoin-events',
     icon: Calendar,
     title: 'Bitcoin Events',
-    description: 'Discover Bitcoin events and conferences',
+    description: 'Discover Bitcoin meetups and conferences',
     stats: { events: '10+/month' },
     href: 'https://app.coinlaa.com/',
+    color: 'red',
     detailedDescription: 'Stay updated with Bitcoin events, conferences, and meetups happening around the world.',
     subFeatures: [
       { title: 'Event Calendar', description: 'Comprehensive calendar of Bitcoin events', icon: Calendar },
@@ -183,6 +190,7 @@ const features = [
     description: 'Stay updated with latest Bitcoin news and insights',
     stats: { articles: '20+/day', sources: '100+', alerts: '10+' },
     href: 'https://app.coinlaa.com/',
+    color: 'red',
     detailedDescription: 'Get the latest Bitcoin news, analysis, and insights from trusted sources. Stay informed about market trends and developments.',
     subFeatures: [
       { title: 'News Aggregation', description: 'Curated news from top Bitcoin sources', icon: Newspaper },
@@ -198,6 +206,7 @@ const features = [
     description: 'Support and grow Bitcoin startups',
     stats: {},
     href: 'https://app.coinlaa.com/',
+    color: 'teal',
     detailedDescription: 'Support Bitcoin startups and innovations. Connect with investors, mentors, and entrepreneurs in the Bitcoin ecosystem.',
     subFeatures: [
       { title: 'Startup Directory', description: 'Directory of Bitcoin startups and projects', icon: Rocket },
@@ -223,61 +232,15 @@ export default function Home() {
       />
 
       {/* Hero Section */}
-      <section className="relative pt-12 sm:pt-16 md:pt-20 pb-20 sm:pb-24 md:pb-32 px-4 sm:px-6 overflow-hidden">
+      <section className="relative py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-b to-white from-[#FFECE6]/50">
         {/* Background Graphics - Hidden on mobile, shown on tablet+ */}
-        <div className="hidden md:block absolute right-0 top-0 w-1/2 h-full pointer-events-none opacity-20">
-          <div className="relative w-full h-full">
-            {/* Large Bitcoin B */}
-            <div className="absolute top-20 right-20">
-              <Bitcoin className="h-48 lg:h-64 w-48 lg:w-64 text-orange-500" />
-            </div>
-            
-            {/* Floating Icons */}
-            <div className="absolute top-10 right-40">
-              <div className="relative">
-                <Monitor className="h-10 lg:h-12 w-10 lg:w-12 text-gray-600" />
-                <TrendingUp className="h-5 lg:h-6 w-5 lg:w-6 text-orange-500 absolute -bottom-1 -right-1" />
-              </div>
-            </div>
-            
-            <div className="absolute top-32 right-60">
-              <Cloud className="h-7 lg:h-8 w-7 lg:w-8 text-gray-600" />
-            </div>
-            
-            <div className="absolute top-48 right-10">
-              <Bitcoin className="h-8 lg:h-10 w-8 lg:w-10 text-orange-400" />
-            </div>
-            
-            <div className="absolute top-64 right-52">
-              <Calendar className="h-7 lg:h-8 w-7 lg:w-8 text-gray-600" />
-            </div>
-            
-            <div className="absolute top-80 right-28">
-              <Lock className="h-7 lg:h-8 w-7 lg:w-8 text-gray-600" />
-            </div>
-            
-            <div className="absolute top-96 right-48">
-              <div className="bg-orange-100 rounded-lg p-2">
-                <FileText className="h-5 lg:h-6 w-5 lg:w-6 text-orange-600" />
-                <span className="text-xs text-orange-600 font-semibold">NEWS</span>
-              </div>
-            </div>
-            
-            <div className="absolute top-72 right-72">
-              <div className="bg-orange-100 rounded-lg p-2">
-                <Briefcase className="h-5 lg:h-6 w-5 lg:w-6 text-orange-600" />
-                <span className="text-xs text-orange-600 font-semibold">JOB</span>
-              </div>
-            </div>
-            
-            <div className="absolute bottom-20 right-32">
-              <Bitcoin className="h-12 lg:h-16 w-12 lg:w-16 text-orange-400" />
-            </div>
-            
-            <div className="absolute bottom-32 right-56">
-              <Bitcoin className="h-6 lg:h-8 w-6 lg:w-8 text-orange-300" />
-            </div>
-          </div>
+        <div className="hidden md:block absolute right-0 top-0 w-1/2 lg:w-2/5 xl:w-1/2 h-full pointer-events-none">
+          <img 
+            src="/background-graphics.png" 
+            alt="Background Graphics" 
+            className="w-full h-full object-contain object-right"
+            loading="lazy"
+          />
         </div>
 
         <div className="container mx-auto max-w-6xl relative z-10">
@@ -331,75 +294,89 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
 
       {/* Complete Bitcoin Ecosystem Section */}
-      <section className="px-4 sm:px-6 -mt-8 sm:-mt-12 md:-mt-16 relative z-20">
-        <div className="container mx-auto max-w-6xl">
-          <Card className="shadow-lg border-gray-200 rounded-xl sm:rounded-2xl overflow-hidden">
-            <CardContent className="p-6 sm:p-8 md:p-12">
-              <div className="flex flex-col md:flex-row items-start md:items-center gap-4 sm:gap-6">
-                <div className="flex-1 w-full">
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 text-center md:text-left">
-                    Complete{" "}
-                    <span className="text-orange-500">Bitcoin</span>{" "}
-                    Ecosystem
-                  </h2>
-                  <p className="text-base sm:text-lg text-gray-600 leading-relaxed text-center md:text-left">
-                    Explore our comprehensive suite of Bitcoin tools and services. Each feature is designed to enhance your Bitcoin experience.
-                  </p>
+      <section className="pb-12 sm:pb-16 px-4 sm:px-6 bg-white">
+        <div className="container mx-auto max-w-6xl ">
+          {/* Header Card */}
+          <div className="mx-40 mb-8 sm:mb-10 md:mb-12 relative z-20">
+            <Card className="border border-[#F06623]/30 rounded-2xl sm:rounded-3xl shadow-lg overflow-visible bg-white">
+              <CardContent className="px-6 sm:px-8 md:px-12">
+                <div className="flex flex-col md:flex-row items-center md:items-center gap-6 sm:gap-8">
+                 
+                  
+                  {/* Text Content */}
+                  <div className="flex-1">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 text-center">
+                      Complete{" "}
+                      <span className="text-[#F06623]">Bitcoin</span>{" "}
+                      Ecosystem
+                    </h2>
+                    <div className="space-y-1 sm:space-y-2">
+                      <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
+                        Explore our comprehensive suite of Bitcoin tools and services.
+                      </p>
+                      <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
+                        Each feature is designed to enhance your Bitcoin experience.
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div className="hidden md:block flex-shrink-0">
-                  <Bitcoin className="h-24 lg:h-32 w-24 lg:w-32 text-orange-100" />
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* Features Grid Section */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6 relative">
-        {/* Background Bitcoin Icon - Hidden on mobile, shown on tablet+ */}
-        <div className="hidden md:block absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-1/4 pointer-events-none opacity-10">
-          <Bitcoin className="h-64 lg:h-96 w-64 lg:w-96 text-orange-500" />
-        </div>
-
-        <div className="container mx-auto max-w-6xl relative z-10">
-          <Accordion type="single" collapsible className="features-accordion grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
+              </CardContent>
+            </Card>
+          </div>
+          
+          <Accordion type="single" collapsible className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
             {features.map((feature) => {
               const Icon = feature.icon;
+              
+              // Color mapping for each feature
+              const colorClasses: Record<string, { bg: string; text: string }> = {
+                orange: { bg: 'bg-orange-50', text: 'text-orange-500' },
+                blue: { bg: 'bg-blue-50', text: 'text-blue-500' },
+                green: { bg: 'bg-green-50', text: 'text-green-500' },
+                teal: { bg: 'bg-teal-50', text: 'text-teal-500' },
+                emerald: { bg: 'bg-emerald-50', text: 'text-emerald-500' },
+                purple: { bg: 'bg-purple-50', text: 'text-purple-500' },
+                yellow: { bg: 'bg-yellow-50', text: 'text-yellow-500' },
+                red: { bg: 'bg-red-50', text: 'text-red-500' },
+              };
+              
+              const colors = colorClasses[feature.color] || colorClasses.orange;
+              
               return (
                 <AccordionItem
                   key={feature.id}
                   value={feature.id}
-                  className="border border-gray-200 rounded-lg hover:border-orange-300 hover:shadow-md transition-all duration-200 data-[state=open]:border-orange-300 data-[state=open]:shadow-lg relative group"
+                  className="border border-gray-200 rounded-lg hover:border-[#F06623] hover:shadow-md transition-all duration-200 data-[state=open]:shadow-lg bg-white group"
                 >
-                  <AccordionTrigger className="p-4 sm:p-5 md:p-6 pb-10 sm:pb-12 hover:no-underline [&>svg]:hidden group">
+                  <AccordionTrigger className="p-5 sm:p-6 hover:no-underline [&>svg]:hidden">
                     <div className="w-full">
                       {/* Top Section: Icon, Title, Stats */}
-                      <div className="flex items-start justify-between gap-4 mb-3 pb-2.5">
-                        <div className="flex items-start gap-3 sm:gap-4 flex-1 min-w-0">
-                          <div className="p-2.5 sm:p-3 bg-orange-50 rounded-lg flex-shrink-0">
-                            <Icon className="h-6 w-6 sm:h-7 sm:w-7 text-orange-600" />
+                      <div className="flex items-start justify-between gap-4 mb-3">
+                        <div className="flex items-start gap-4 flex-1 min-w-0 pr-4">
+                          <div className={`${colors.bg} p-3 rounded-lg flex-shrink-0`}>
+                            <Icon className={`h-6 w-6 sm:h-7 sm:w-7 ${colors.text}`} />
                           </div>
-                          <div className="flex-1 min-w-0 pt-0.5">
-                            <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-1.5 sm:mb-2">
+                          <div className="flex-1 min-w-0">
+                            <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1.5 sm:mb-2">
                               {feature.title}
                             </h3>
-                            <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                            <p className="text-sm text-gray-600 leading-relaxed">
                               {feature.description}
                             </p>
                           </div>
                         </div>
-                        {/* Stats in top-right, displayed vertically */}
+                        {/* Stats in top-right */}
                         {Object.keys(feature.stats).length > 0 && (
-                          <div className="flex items-start gap-4 sm:gap-5 flex-shrink-0">
+                          <div className="flex flex-col items-end gap-1 flex-shrink-0">
                             {Object.entries(feature.stats).map(([key, value]) => (
-                              <div key={key} className="text-right">
-                                <div className="text-sm sm:text-base font-semibold text-gray-900 leading-tight">
+                              <div key={key} className="text-right whitespace-nowrap">
+                                <div className="text-sm font-semibold text-gray-900 leading-tight">
                                   {value}
                                 </div>
-                                <div className="text-xs text-gray-500 mt-0.5">
+                                <div className="text-xs text-gray-500">
                                   {key}
                                 </div>
                               </div>
@@ -407,24 +384,29 @@ export default function Home() {
                           </div>
                         )}
                       </div>
-                      {/* Bottom Border and Chevron */}
-                      <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between px-4 sm:px-5 md:px-6 pb-3 sm:pb-4">
-                        <div className="flex-1 border-b-2 border-transparent group-hover:border-orange-500 transition-colors duration-200"></div>
-                        <ChevronDown className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400 group-hover:text-orange-500 flex-shrink-0 ml-3 transition-all duration-200 accordion-chevron" />
+                      
+                      {/* Border bottom with #F06623 color - aligned with text content */}
+                      <div className="flex items-center justify-between mt-4 mb-3">
+                        <div className="flex-1 border-b-2" style={{ borderColor: '#F06623' }}></div>
+                        {/* Chevron on the right with #F06623 color */}
+                        <ChevronDown 
+                          className="h-5 w-5 ml-3 flex-shrink-0 transition-transform duration-200 group-data-[state=open]:rotate-180" 
+                          style={{ color: '#F06623' }}
+                        />
                       </div>
                     </div>
                   </AccordionTrigger>
-                  <AccordionContent className="px-4 sm:px-5 md:px-6 pb-4 sm:pb-5 md:pb-6">
-                    <div className="pt-2 pb-10 border-t border-gray-100">
-                      <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+                  <AccordionContent className="px-5 sm:px-6 md:px-6 pb-6 sm:pb-8 md:pb-10">
+                    <div className="pt-4 pb-10 border-t border-gray-100">
+                      <p className="text-sm sm:text-base text-gray-600 mb-6 leading-relaxed">
                         {feature.detailedDescription}
                       </p>
                       {feature.subFeatures && feature.subFeatures.length > 0 && (
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-6">
                           {feature.subFeatures.map((subFeature, idx) => {
                             const SubIcon = subFeature.icon;
                             return (
-                              <div key={idx} className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+                              <div key={idx} className="flex items-start gap-3 p-3 sm:p-4 bg-gray-50 rounded-lg">
                                 <SubIcon className="h-5 w-5 text-orange-600 flex-shrink-0 mt-0.5" />
                                 <div>
                                   <h4 className="text-sm font-semibold text-gray-900 mb-1">
