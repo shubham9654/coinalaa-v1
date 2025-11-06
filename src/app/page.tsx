@@ -243,7 +243,7 @@ export default function Home() {
           />
         </div>
 
-        <div className="container mx-auto max-w-6xl relative z-10">
+        <div className="md:mx-20 max-w-6xl relative z-10">
           <div className="max-w-2xl mx-auto md:mx-0">
             {/* AI-Powered Badge */}
             <div className="flex items-center gap-2 mb-4 sm:mb-6 justify-center md:justify-start">
