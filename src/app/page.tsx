@@ -349,7 +349,7 @@ export default function Home() {
                 <AccordionItem
                   key={feature.id}
                   value={feature.id}
-                  className="border border-gray-200 rounded-lg hover:border-[#F06623] hover:shadow-md transition-all duration-200 data-[state=open]:shadow-lg bg-white group"
+                  className="border border-gray-200 rounded-lg hover:border-[#F06623] hover:shadow-md transition-all duration-200 data-[state=open]:shadow-lg data-[state=open]:col-span-full bg-white group"
                 >
                   <AccordionTrigger className="p-5 sm:p-6 hover:no-underline [&>svg]:hidden">
                     <div className="w-full">
@@ -400,7 +400,7 @@ export default function Home() {
                     </div>
                   </AccordionTrigger>
                   <AccordionContent className="px-5 sm:px-6 md:px-6 pb-6 sm:pb-8 md:pb-10">
-                    <div className="pt-4 pb-10 border-t border-gray-100">
+                    <div className="py-4 border-t border-gray-100">
                       <p className="text-sm sm:text-base text-gray-600 mb-6 leading-relaxed">
                         {feature.detailedDescription}
                       </p>
@@ -424,16 +424,18 @@ export default function Home() {
                           })}
                         </div>
                       )}
-                      <Button
-                        asChild
-                        size="sm"
-                        className="bg-orange-500 hover:bg-orange-600 text-white w-full sm:w-auto"
-                      >
-                        <a href={feature.href} target="_blank" rel="noopener noreferrer">
-                          Explore {feature.title}
-                          <ArrowRight className="h-4 w-4 ml-2 inline" />
-                        </a>
-                      </Button>
+                      <div className="flex justify-end mt-6">
+                        <Button
+                          asChild
+                          size="sm"
+                          className="bg-orange-500 hover:bg-orange-600 text-white"
+                        >
+                          <a href={feature.href} target="_blank" rel="noopener noreferrer">
+                            Explore {feature.title}
+                            <ArrowRight className="h-4 w-4 ml-2 inline" />
+                          </a>
+                        </Button>
+                      </div>
                     </div>
                   </AccordionContent>
                 </AccordionItem>
