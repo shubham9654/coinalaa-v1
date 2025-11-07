@@ -304,8 +304,8 @@ export default function Home() {
       <section className="mt-5 pb-12 sm:pb-16 px-4 sm:px-6 bg-white">
         <div className="container mx-auto px-0 sm:px-20">
           {/* Header Card */}
-          <div className="max-w-4xl mx-auto mb-8 sm:mb-10 md:mb-12 lg:mb-16 -mt-8 sm:-mt-12 md:-mt-16 lg:-mt-20 relative z-20">
-            <Card className="border-0 md:border md:border-gray-200 hover:border hover:border-[#F06623]/30 rounded-2xl sm:rounded-[20px] shadow-none md:shadow-lg hover:!shadow-lg transition-all duration-300 overflow-visible bg-white">
+          <div className="max-w-[54rem] mx-auto mb-8 sm:mb-10 md:mb-12 lg:mb-16 -mt-8 sm:-mt-12 md:-mt-16 lg:-mt-20 relative z-20">
+            <Card className="border-0 md:border md:border-gray-200 hover:border hover:border-[#F06623]/30 rounded-2xl sm:rounded-[20px] shadow-none md:shadow-lg hover:!shadow-lg transition-all duration-300 overflow-visible bg-white py-10 ">
               <CardContent className="px-6 sm:px-0">
                 <div className="flex flex-col md:flex-row items-center md:items-center gap-6 sm:gap-8">
 
@@ -328,7 +328,13 @@ export default function Home() {
                   </div>
                 </div>
               </CardContent>
+
+
             </Card>
+
+            <img src="/bitcoin-ecosystem.png" alt="Bitcoin Ecosystem" className="object-contain hidden md:block absolute -left-[70px] bottom-[35px]" />
+
+
           </div>
 
           <Accordion type="single" collapsible className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
