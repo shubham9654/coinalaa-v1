@@ -305,7 +305,7 @@ export default function Home() {
         <div className="container mx-auto px-0 sm:px-20">
           {/* Header Card */}
           <div className="max-w-[54rem] mx-auto mb-8 sm:mb-10 md:mb-12 lg:mb-16 -mt-8 sm:-mt-12 md:-mt-16 lg:-mt-20 relative z-20">
-            <Card className="border-0 md:border md:border-gray-200 hover:border hover:border-[#F06623]/30 rounded-2xl sm:rounded-[20px] shadow-none md:shadow-lg hover:!shadow-lg transition-all duration-300 overflow-visible bg-white py-10 ">
+            <Card className="border-0 md:border md:border-gray-200 rounded-2xl sm:rounded-[20px] shadow-none md:shadow-lg hover:!shadow-lg transition-all duration-300 overflow-visible bg-white py-10 ">
               <CardContent className="px-6 sm:px-0">
                 <div className="flex flex-col md:flex-row items-center md:items-center gap-6 sm:gap-8">
 
@@ -417,12 +417,12 @@ export default function Home() {
                             const SubIcon = subFeature.icon;
                             return (
                               <div key={idx} className="flex items-start gap-3 p-3 sm:p-4 bg-gray-50 rounded-lg">
-                                <SubIcon className="h-4 w-4 sm:h-5 sm:w-5 text-orange-600 flex-shrink-0 mt-0.5" />
+                                <SubIcon className="h-5 w-5 sm:h-6 sm:w-6 text-orange-600 flex-shrink-0 mt-1" />
                                 <div>
-                                  <h4 className="text-xs sm:text-sm font-semibold text-gray-900 mb-1">
+                                  <h4 className="text-[14px] sm:text-[20px] font-semibold text-gray-900 mb-1">
                                     {subFeature.title}
                                   </h4>
-                                  <p className="text-xs text-gray-600 leading-relaxed">
+                                  <p className="text-[12px] sm:text-[16px]  text-gray-600 leading-relaxed">
                                     {subFeature.description}
                                   </p>
                                 </div>
