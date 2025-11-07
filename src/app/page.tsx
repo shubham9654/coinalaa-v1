@@ -241,23 +241,23 @@ export default function Home() {
             <div className="flex items-center gap-2 mb-4 sm:mb-6 justify-center md:justify-start">
               <Badge
                 variant="outline"
-                className="border-gray-300 text-gray-700 bg-white px-3 sm:px-4 py-1 sm:py-1.5 text-xs sm:text-sm font-medium"
+                className="border-[#1E1E1E] text-white font-semibold bg-[#1E1E1E] px-3 sm:px-4 py-1 sm:py-1.5 text-xs sm:text-sm "
               >
-                <Zap className="h-3 w-3 sm:h-3.5 sm:w-3.5 mr-1 sm:mr-1.5 text-gray-600" />
+                <Zap className="h-3 w-3 sm:h-3.5 sm:w-3.5 mr-1 sm:mr-1.5 text-white" />
                 AI-Powered
               </Badge>
             </div>
 
             {/* Main Title */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.7vw] font-bold text-gray-900 mb-4 sm:mb-6 text-center md:text-left">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.7vw] 2xl:text-[92px] font-bold text-gray-900 mb-4 sm:mb-6 text-center md:text-left">
               The Ultimate{" "}
-              <span className="text-[10vw] text-orange-500">Bitcoin</span>{" "}
+              <span className="text-[8.6vw] 2xl:text-[171px] text-orange-500">Bitcoin</span>{" "}
               <br />
               Hub
             </h1>
 
             {/* Description */}
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 md:mb-10 leading-relaxed text-center md:text-left px-4 sm:px-0">
+            <p className="text-base sm:text-lg md:text-xl 2xl:text-[24px] text-[#818181] mb-6 sm:mb-8 md:mb-6 leading-relaxed 2xl:leading-[48px] text-center md:text-left px-4 sm:px-0">
               Connect, Learn, Work, and Grow in the Bitcoin ecosystem. <br /> Everything you need in one place.
             </p>
 
@@ -266,17 +266,17 @@ export default function Home() {
               <Button
                 size="lg"
                 variant="outline"
-                className="bg-gray-900 text-white border-gray-900 hover:bg-gray-800 h-11 sm:h-12 px-5 sm:px-6 text-sm sm:text-base w-full sm:w-auto"
+                className="bg-[#1E1E1E] text-white border-[#1E1E1E]font-semibold hover:bg-gray-800 py-2 px-5 sm:px-6 text-sm sm:text-base 2xl:text-[24px] w-full sm:w-auto h-full"
                 asChild
               >
                 <a href="https://app.coinlaa.com/register/" target="_self">
-                  Get Started Free <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5 ml-2 inline" />
+                  Get Started Free <ChevronRight className="ml-2 inline" />
                 </a>
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-gray-300 text-gray-700 hover:bg-gray-50 h-11 sm:h-12 px-5 sm:px-6 text-sm sm:text-base w-full sm:w-auto"
+                className="border-[#1E1E1E] text-[#333333] font-semibold hover:bg-gray-50 py-2 px-5 sm:px-6 text-sm sm:text-base 2xl:text-[24px] w-full sm:w-auto h-full"
                 asChild
               >
                 <a href="https://app.coinlaa.com/" target="_self">
@@ -301,7 +301,7 @@ export default function Home() {
 
 
       {/* Complete Bitcoin Ecosystem Section */}
-      <section className="mt-5 pb-12 sm:pb-16 px-4 sm:px-6 bg-white">
+      <section className="mt-5 pb-12 sm:pb-16 px-4 sm:px-6 bg-white relative z-10">
         <div className="container mx-auto px-0 sm:px-20">
           {/* Header Card */}
           <div className="max-w-[54rem] mx-auto mb-8 sm:mb-10 md:mb-12 lg:mb-16 -mt-8 sm:-mt-12 md:-mt-16 lg:-mt-20 relative z-20">
@@ -312,16 +312,16 @@ export default function Home() {
 
                   {/* Text Content */}
                   <div className="flex-1">
-                    <h2 className="text-2xl sm:text-3xl md:text-[2.64vw] font-bold text-gray-900 mb-3 sm:mb-6 text-center">
+                    <h2 className="text-2xl sm:text-3xl md:text-[2.64vw] 2xl:text-[52px] font-bold text-gray-900 mb-3 sm:mb-6 text-center">
                       Complete{" "}
                       <span className="text-[#F06623]">Bitcoin</span>{" "}
                       Ecosystem
                     </h2>
                     <div className="space-y-1 sm:space-y-2 text-center">
-                      <p className="mb-0 text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
+                      <p className="mb-0 text-sm sm:text-base md:text-lg 2xl:text-[24px] text-[#818181] leading-relaxed 2xl:leading-[40px]">
                         Explore our comprehensive suite of Bitcoin tools and services.
                       </p>
-                      <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
+                      <p className="text-sm sm:text-base md:text-lg 2xl:text-[24px] text-[#818181] leading-relaxed 2xl:leading-[40px]">
                         Each feature is designed to enhance your Bitcoin experience.
                       </p>
                     </div>
@@ -369,14 +369,7 @@ export default function Home() {
                           <div className={`${colors.bg} p-2.5 sm:p-3 rounded-lg flex-shrink-0`}>
                             <Icon className={`h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 ${colors.text}`} />
                           </div>
-                          <div className="flex-1 min-w-0">
-                            <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-1.5 sm:mb-2 leading-tight">
-                              {feature.title}
-                            </h3>
-                            <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
-                              {feature.description}
-                            </p>
-                          </div>
+
                         </div>
                         {/* Stats in top-right */}
                         {Object.keys(feature.stats).length > 0 && (
@@ -395,14 +388,28 @@ export default function Home() {
                         )}
                       </div>
 
-                      {/* Border bottom with #F06623 color - aligned with text content */}
-                      <div className="flex items-center justify-between mt-4">
-                        <div className="flex-1 border-b-2 border-transparent group-hover:border-[#F06623] transition-colors duration-200"></div>
-                        {/* Chevron on the right with #F06623 color */}
+                      <div className="flex items-end justify-between">
+                        <div className="flex-1 min-w-0">
+                          <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl 2xl:text-[34px] font-bold text-gray-900 mb-1.5 sm:mb-2 leading-tight">
+                            {feature.title}
+                          </h3>
+                          <p className="text-sm sm:text-base md:text-lg 2xl:text-[20px] text-[#818181] leading-relaxed font-normal">
+                            {feature.description}
+                          </p>
+                        </div>
                         <ChevronDown
                           className="h-5 w-5 ml-3 flex-shrink-0 transition-transform duration-200 group-data-[state=open]:rotate-180"
                           style={{ color: '#F06623' }}
                         />
+                      </div>
+
+
+
+                      {/* Border bottom with #F06623 color - aligned with text content */}
+                      <div className="flex items-center justify-between mt-4">
+                        <div className="flex-1 border-b-2 border-transparent group-hover:border-[#F06623] transition-colors duration-200"></div>
+                        {/* Chevron on the right with #F06623 color */}
+
                       </div>
                     </div>
                   </AccordionTrigger>
@@ -450,6 +457,10 @@ export default function Home() {
             })}
           </Accordion>
         </div>
+
+        <img src="/bitcoin1.png" alt="Bitcoin Ecosystem" className="object-contain hidden md:block absolute left-[20px] bottom-[200px] z-0" />
+
+        <img src="/bitcoin2.png" alt="Bitcoin Ecosystem" className="object-contain hidden md:block absolute right-[20px] top-[500px] z-0" />
       </section>
 
       <SiteFooter />
