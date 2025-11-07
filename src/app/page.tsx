@@ -458,9 +458,9 @@ export default function Home() {
           </Accordion>
         </div>
 
-        <img src="/bitcoin1.png" alt="Bitcoin Ecosystem" className="object-contain hidden md:block absolute left-[20px] bottom-[200px] z-0" />
+        <img src="/bitcoin1.png" alt="Bitcoin Ecosystem" className="object-contain hidden md:block absolute left-[20px] bottom-[200px] z-0 opacity-70" />
 
-        <img src="/bitcoin2.png" alt="Bitcoin Ecosystem" className="object-contain hidden md:block absolute right-[20px] top-[500px] z-0" />
+        <img src="/bitcoin2.png" alt="Bitcoin Ecosystem" className="object-contain hidden md:block absolute right-[20px] top-[500px] z-0  opacity-70" />
       </section>
 
       <SiteFooter />
