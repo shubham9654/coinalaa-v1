@@ -359,7 +359,7 @@ export default function Home() {
                 <AccordionItem
                   key={feature.id}
                   value={feature.id}
-                  className="border border-gray-200 rounded-lg hover:border-[#F06623] hover:shadow-md transition-all duration-200 data-[state=open]:shadow-lg data-[state=open]:col-span-full bg-white group"
+                  className="border border-gray-200 rounded-lg hover:shadow-md transition-all duration-200 data-[state=open]:shadow-lg data-[state=open]:col-span-full bg-white group"
                 >
                   <AccordionTrigger className="p-5 sm:p-6 hover:no-underline [&>svg]:hidden">
                     <div className="w-full">
