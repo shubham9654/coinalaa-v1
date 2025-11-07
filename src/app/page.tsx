@@ -373,10 +373,10 @@ export default function Home() {
                         </div>
                         {/* Stats in top-right */}
                         {Object.keys(feature.stats).length > 0 && (
-                          <div className="flex gap-x-2 sm:gap-x-3 flex-shrink-0">
+                          <div className="flex gap-x-2 sm:gap-x-3 lg:gap-x-6 flex-shrink-0">
                             {Object.entries(feature.stats).map(([key, value]) => (
                               <div key={key} className="text-right whitespace-nowrap">
-                                <div className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-900 leading-tight">
+                                <div className="text-sm sm:text-base md:text-lg lg:text-xl 2xl:text-[26px] font-semibold text-gray-900 leading-tight">
                                   {value}
                                 </div>
                                 <div className="text-xs sm:text-sm text-[#818181]">
