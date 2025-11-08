@@ -437,7 +437,7 @@ export default function Home() {
               <Button
                 size="lg"
                 variant="outline"
-                className="bg-[#1E1E1E] text-white border-[#1E1E1E]font-semibold hover:bg-gray-800 py-2 px-5 sm:px-6 text-sm sm:text-base 2xl:text-[24px] w-full sm:w-auto h-full"
+                className="bg-[#1E1E1E] text-white border-[#1E1E1E] font-semibold hover:text-white hover:bg-gray-800 py-2 px-5 sm:px-6 text-sm sm:text-base 2xl:text-[24px] w-full sm:w-auto h-full"
                 asChild
               >
                 <a href="https://app.coinlaa.com/register/" target="_self">
