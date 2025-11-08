@@ -362,7 +362,7 @@ export default function Home() {
                 <AccordionItem
                   key={feature.id}
                   value={feature.id}
-                  className={`hover:shadow-[6px_6px_32px_1px_#F066231A] transition-all duration-200 data-[state=open]:shadow-[6px_6px_32px_1px_#F066231A] data-[state=open]:col-span-full data-[state=open]:border-r-0 bg-white group && border-[#818181] ${index === features.length - 1 || index  === features.length - 2 ? 'border-b-0' : ''} ${index % 2 === 0 ? 'border-r [state=open]:border-r-0' : ''}`}
+                  className={`hover:shadow-[6px_6px_32px_1px_#F066231A] transition-all duration-200 data-[state=open]:shadow-[6px_6px_32px_1px_#F066231A] data-[state=open]:col-span-full data-[state=open]:border-r-0 bg-white group && border-[#818181] ${index === features.length - 1 || index  === features.length - 2 ? 'border-b-0' : ''} ${index % 2 === 0 ? 'md:border-r [state=open]:border-r-0' : ''}`}
                 >
                   <AccordionTrigger className="p-5 sm:p-6 hover:no-underline [&>svg]:hidden">
                     <div className="w-full">
@@ -461,9 +461,9 @@ export default function Home() {
           </Accordion>
         </div>
 
-        <img src="/bitcoin1.png" alt="Bitcoin Ecosystem" className="object-contain hidden md:block absolute left-[20px] bottom-[200px] z-0 opacity-30 h-[100px] 2xl:h-auto 2xl:w-auto" />
+        <img src="/bitcoin1.png" alt="Bitcoin Ecosystem" className="opacity-30 object-contain hidden md:block absolute left-[20px] bottom-[200px] -z-10  h-[8vw] shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] rounded-full p-6 bg-white" />
 
-        <img src="/bitcoin2.png" alt="Bitcoin Ecosystem" className="object-contain hidden md:block absolute right-[20px] 2xl:right-[20px] top-[500px] z-0  opacity-30 h-[100px] 2xl:h-auto 2xl:w-auto" />
+        <img src="/bitcoin2.png" alt="Bitcoin Ecosystem" className="opacity-30 object-contain hidden md:block absolute right-[20px] top-[500px] -z-10  h-[8vw] shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] rounded-full p-6 bg-white" />
       </section>
 
       <SiteFooter />
