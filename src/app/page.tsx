@@ -403,7 +403,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative py-12 sm:py-16 md:pt-30 2xl:pt-[165px] md:pb-16 2xl:pb-[92px] bg-gradient-to-b to-white from-[#FFECE6]/50  ">
-        <div className="container mx-auto  px-4 sm:px-20 relative z-10 grid grid-cols-1 md:grid-cols-2">
+        <div className="container mx-auto  px-4 sm:px-20 relative z-10 flex flex-col-reverse md:grid grid-cols-2">
           <div className="">
             {/* AI-Powered Badge */}
             <div className="flex items-center gap-2 mb-4 sm:mb-6 justify-center md:justify-start">
@@ -457,7 +457,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="hidden md:flex pointer-events-none  justify-end">
+          <div className="flex pointer-events-none  justify-end">
             <img
               src="/background-graphics.png"
               alt="Background Graphics"
@@ -473,7 +473,7 @@ export default function Home() {
         <div className="container mx-auto px-0 sm:px-20">
           {/* Header Card */}
           <div className="max-w-[54rem] mx-auto mb-8 sm:mb-10 md:mb-12 lg:mb-16 2xl:!mb-[80px] relative z-20">
-            <Card className="border-0 md:border md:border-gray-200 rounded-2xl sm:rounded-[20px] shadow-none md:shadow-[0_0_8px_8px_#f066230d] transition-all duration-300 overflow-visible bg-white py-10 relative z-10">
+            <Card className="border-0 md:border md:border-gray-200 rounded-2xl sm:rounded-[20px] shadow-[0_0_8px_8px_#f066230d] transition-all duration-300 overflow-visible bg-white py-10 relative z-10">
               <CardContent className="px-6 sm:px-0">
                 <div className="flex flex-col md:flex-row items-center md:items-center gap-6 sm:gap-8">
                   {/* Text Content */}
