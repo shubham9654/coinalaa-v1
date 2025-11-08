@@ -232,7 +232,7 @@ export default function Home() {
       />
 
       {/* Hero Section */}
-      <section className="relative py-12 sm:py-16 md:pt-32 md:pb-16 bg-gradient-to-b to-white from-[#FFECE6]/50  ">
+      <section className="relative py-12 sm:py-16 md:pt-30 2xl:pt-36 md:pb-16 bg-gradient-to-b to-white from-[#FFECE6]/50  ">
 
         <div className="container mx-auto  px-4 sm:px-20 relative z-10 grid grid-cols-1 md:grid-cols-2">
 
