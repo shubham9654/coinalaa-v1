@@ -232,7 +232,7 @@ export default function Home() {
       />
 
       {/* Hero Section */}
-      <section className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-b to-white from-[#FFECE6]/50  ">
+      <section className="relative py-12 sm:py-16 md:pt-30 md:pb-16 bg-gradient-to-b to-white from-[#FFECE6]/50  ">
 
         <div className="container mx-auto  px-4 sm:px-20 relative z-10 grid grid-cols-1 md:grid-cols-2">
 
@@ -249,9 +249,9 @@ export default function Home() {
             </div>
 
             {/* Main Title */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.7vw] 2xl:text-[92px] font-bold text-gray-900 mb-4 sm:mb-6 text-center md:text-left">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.791666666666667vw] font-bold text-gray-900 mb-4 sm:mb-6 text-center md:text-left">
               The Ultimate{" "}
-              <span className="text-[8.6vw] 2xl:text-[171px] text-orange-500">Bitcoin</span>{" "}
+              <span className="text-[7.6vw] 2xl:text-[8.90625vw] text-orange-500">Bitcoin</span>{" "}
               <br />
               Hub
             </h1>
@@ -301,10 +301,10 @@ export default function Home() {
 
 
       {/* Complete Bitcoin Ecosystem Section */}
-      <section className="mt-5 pb-12 sm:pb-16 px-4 sm:px-6 bg-white relative z-10">
+      <section className="pb-12 sm:pb-16 px-4 sm:px-6 bg-white relative z-10">
         <div className="container mx-auto px-0 sm:px-20">
           {/* Header Card */}
-          <div className="max-w-[54rem] mx-auto mb-8 sm:mb-10 md:mb-12 lg:mb-16 -mt-8 sm:-mt-12 md:-mt-16 lg:-mt-20 relative z-20">
+          <div className="max-w-[54rem] mx-auto mb-8 sm:mb-10 md:mb-12 lg:mb-16 relative z-20">
             <Card className="border-0 md:border md:border-gray-200 rounded-2xl sm:rounded-[20px] shadow-none md:shadow-[0_0_8px_8px_#f066230d] transition-all duration-300 overflow-visible bg-white py-10 relative z-10">
               <CardContent className="px-6 sm:px-0">
                 <div className="flex flex-col md:flex-row items-center md:items-center gap-6 sm:gap-8">
@@ -339,8 +339,9 @@ export default function Home() {
 
           </div>
 
-          <Accordion type="single" collapsible className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
-            {features.map((feature) => {
+          <Accordion type="single" collapsible className="grid grid-cols-1 sm:grid-cols-2 
+            ">
+            {features.map((feature, index) => {
               const Icon = feature.icon;
 
               // Color mapping for each feature
@@ -361,7 +362,7 @@ export default function Home() {
                 <AccordionItem
                   key={feature.id}
                   value={feature.id}
-                  className="border border-gray-200 rounded-lg hover:shadow-md transition-all duration-200 data-[state=open]:shadow-lg data-[state=open]:col-span-full bg-white group"
+                  className={`hover:shadow-[6px_6px_32px_1px_#F066231A] transition-all duration-200 data-[state=open]:shadow-[6px_6px_32px_1px_#F066231A] data-[state=open]:col-span-full data-[state=open]:border-r-0 bg-white group && border-[#818181] ${index === features.length - 1 || index  === features.length - 2 ? 'border-b-0' : ''} ${index % 2 === 0 ? 'border-r [state=open]:border-r-0' : ''}`}
                 >
                   <AccordionTrigger className="p-5 sm:p-6 hover:no-underline [&>svg]:hidden">
                     <div className="w-full">
@@ -460,9 +461,9 @@ export default function Home() {
           </Accordion>
         </div>
 
-        <img src="/bitcoin1.png" alt="Bitcoin Ecosystem" className="object-contain hidden md:block absolute left-[20px] bottom-[200px] z-0 opacity-30" />
+        <img src="/bitcoin1.png" alt="Bitcoin Ecosystem" className="object-contain hidden md:block absolute left-[20px] bottom-[200px] z-0 opacity-30 h-[100px] 2xl:h-auto 2xl:w-auto" />
 
-        <img src="/bitcoin2.png" alt="Bitcoin Ecosystem" className="object-contain hidden md:block absolute right-[20px] top-[500px] z-0  opacity-30" />
+        <img src="/bitcoin2.png" alt="Bitcoin Ecosystem" className="object-contain hidden md:block absolute right-[20px] 2xl:right-[20px] top-[500px] z-0  opacity-30 h-[100px] 2xl:h-auto 2xl:w-auto" />
       </section>
 
       <SiteFooter />
