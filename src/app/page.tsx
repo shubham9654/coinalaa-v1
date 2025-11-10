@@ -457,7 +457,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex pointer-events-none  justify-end">
+          <div className="flex pointer-events-none justify-end">
             <img
               src="/background-graphics.png"
               alt="Background Graphics"
@@ -499,7 +499,7 @@ export default function Home() {
               <img
                 src="/bitcoin-ecosystem.png"
                 alt="Bitcoin Ecosystem"
-                className="object-contain hidden md:block absolute -left-[70px] bottom-[50px] shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] rounded-full p-6 z-20 bg-white"
+                className="object-contain block absolute -left-[15px] md:-left-[70px] bottom-[100px] md:bottom-[50px] shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] rounded-full p-2 md:p-6 z-20 bg-white h-[40px] md:h-auto 2xl:h-[126px]"
               />
             </Card>
           </div>
