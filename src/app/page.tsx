@@ -499,7 +499,7 @@ export default function Home() {
               <img
                 src="/bitcoin-ecosystem.png"
                 alt="Bitcoin Ecosystem"
-                className="object-contain block absolute -left-[15px] md:-left-[70px] bottom-[100px] md:bottom-[50px] shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] rounded-full p-2 md:p-6 z-20 bg-white h-[40px] md:h-auto 2xl:h-[126px]"
+                className="object-contain block absolute -left-[4%] md:-left-[6%] bottom-[35%] md:bottom-[25%] shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] rounded-full p-2 md:p-4 2xl:p-6 z-20 bg-white h-[40px] md:h-[6.5625vw]"
               />
             </Card>
           </div>
