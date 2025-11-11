@@ -402,7 +402,7 @@ export default function Home() {
       />
 
       {/* Hero Section */}
-      <section className="relative py-12 sm:py-16 md:pt-30 2xl:pt-[165px] md:pb-16 2xl:pb-[92px] bg-gradient-to-b to-white from-[#FFECE6]/50  ">
+      <section className="relative py-12 md:pt-20 md:pb-10 bg-gradient-to-b to-white from-[#FFECE6]/50  ">
         <div className="container mx-auto  px-4 sm:px-20 relative z-10 flex flex-col-reverse md:grid grid-cols-2">
           <div className="">
             {/* AI-Powered Badge */}
@@ -532,7 +532,7 @@ export default function Home() {
                 <AccordionItem
                   key={feature.id}
                   value={feature.id}
-                  className={`hover:shadow-[6px_6px_32px_1px_#F066231A] transition-all duration-200 data-[state=open]:shadow-[6px_6px_32px_1px_#F066231A] data-[state=open]:col-span-full data-[state=open]:border-r-0 bg-white group && border-[#818181] ${
+                  className={`hover:shadow-[6px_6px_32px_1px_#F066231A] transition-all duration-200 data-[state=open]:shadow-[6px_6px_32px_1px_#F066231A] data-[state=open]:col-span-full data-[state=open]:border-r-0 bg-white data-[state=open]:bg-gray-100 group && border-[#818181] ${
                     index === features.length - 1 ||
                     index === features.length - 2
                       ? "border-b-0"
