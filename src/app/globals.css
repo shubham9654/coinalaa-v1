@@ -150,3 +150,14 @@
 .features-accordion [data-slot="accordion-item"][data-state="open"] .accordion-chevron {
   color: rgb(249 115 22) !important;
 }
+
+@media (min-width: 1600px) {
+  .main_title {
+    font-size: 92px;
+  }
+
+  .main_title span {
+    font-size: 171px;
+  }
+}
+

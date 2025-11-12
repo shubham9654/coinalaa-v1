@@ -18,11 +18,14 @@ interface SiteHeaderProps {
   onSignOut?: () => void;
 }
 
-const navLinks = [
-  { href: "/about", label: "About us" },
-];
+const navLinks = [{ href: "/about", label: "About us" }];
 
-export function SiteHeader({ user, onSignIn, onSignUp, onSignOut }: SiteHeaderProps) {
+export function SiteHeader({
+  user,
+  onSignIn,
+  onSignUp,
+  onSignOut,
+}: SiteHeaderProps) {
   const pathname = usePathname();
 
   const currentPageLabel = (() => {
@@ -37,15 +40,27 @@ export function SiteHeader({ user, onSignIn, onSignUp, onSignOut }: SiteHeaderPr
 
     if (onSignIn) {
       return (
-        <Button variant="outline" size="sm" onClick={onSignIn} className="text-xs sm:text-sm px-3 sm:px-4">
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={onSignIn}
+          className="text-xs sm:text-sm px-3 sm:px-4"
+        >
           Sign In
         </Button>
       );
     }
 
     return (
-      <Button variant="outline" size="sm" asChild className="text-xs sm:text-sm px-3 sm:px-4">
-        <a href="https://app.coinlaa.com/login/" target="_self">Sign In</a>
+      <Button
+        variant="outline"
+        size="sm"
+        asChild
+        className="text-xs sm:text-sm px-3 sm:px-4"
+      >
+        <a href="https://app.coinlaa.com/login/" target="_self">
+          Sign In
+        </a>
       </Button>
     );
   };
@@ -98,20 +113,7 @@ export function SiteHeader({ user, onSignIn, onSignUp, onSignOut }: SiteHeaderPr
             </Link>
           </div>
 
-          <div className="hidden lg:flex items-center gap-4">
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
-                <Input
-                  type="text"
-                  placeholder="Search"
-                  className="pl-10 w-56 xl:w-64 h-8 xl:h-9 border-gray-300 text-sm"
-                />
-              </div>
-            </div>
-
           <div className="flex items-center gap-2 sm:gap-4 md:gap-6">
-            
-            
             <nav className="hidden sm:flex items-center gap-3 md:gap-4 text-sm font-medium text-gray-600">
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
@@ -136,13 +138,20 @@ export function SiteHeader({ user, onSignIn, onSignUp, onSignOut }: SiteHeaderPr
                 <>
                   <div className="flex items-center gap-2">
                     <Avatar className="h-7 w-7 sm:h-8 sm:w-8">
-                      <AvatarFallback className="text-xs sm:text-sm">{user.name[0]}</AvatarFallback>
+                      <AvatarFallback className="text-xs sm:text-sm">
+                        {user.name[0]}
+                      </AvatarFallback>
                     </Avatar>
                     <span className="hidden md:block text-sm font-medium text-gray-700">
                       {user.name}
                     </span>
                   </div>
-                  <Button variant="outline" size="sm" onClick={onSignOut} className="text-xs sm:text-sm px-3 sm:px-4">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={onSignOut}
+                    className="text-xs sm:text-sm px-3 sm:px-4"
+                  >
                     Sign Out
                   </Button>
                 </>
