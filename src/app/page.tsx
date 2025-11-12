@@ -402,11 +402,11 @@ export default function Home() {
       />
 
       {/* Hero Section */}
-      <section className="relative py-12 md:py-10 bg-gradient-to-b to-white from-[#FFECE6]/50  ">
-        <div className="container mx-auto  px-4 sm:px-20 relative z-10 flex flex-col-reverse md:grid grid-cols-2">
+      <section className="relative py-8 md:py-10 bg-gradient-to-b to-white from-[#FFECE6]/50  ">
+        <div className="container mx-auto  px-4 sm:px-20 relative z-10 flex flex-col-reverse md:grid grid-cols-2 items-center">
           <div className="">
             {/* AI-Powered Badge */}
-            <div className="flex items-center gap-2 mb-4 sm:mb-6 justify-center md:justify-start">
+            <div className="flex items-center gap-2 mb-2 sm:mb-4 justify-center md:justify-start">
               <Badge
                 variant="outline"
                 className="border-[#1E1E1E] text-white font-semibold bg-[#1E1E1E] px-3 sm:px-4 py-1 sm:py-1.5 text-xs sm:text-sm "
@@ -417,17 +417,18 @@ export default function Home() {
             </div>
 
             {/* Main Title */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.791666666666667vw] max:2xl-[] font-bold text-gray-900 mb-4 sm:mb-6 text-center md:text-left main_title">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 text-center md:text-left main_title">
               The Ultimate{" "}
-              <span className="text-[7.6vw] 2xl:text-[8.90625vw] text-orange-500">
+              <br />
+              <span className="text-[7.6vw] md:text-8xl text-orange-500">
                 Bitcoin
               </span>{" "}
-              <br />
+              
               Hub
             </h1>
 
             {/* Description */}
-            <p className="text-base sm:text-lg md:text-xl 2xl:text-[24px] text-[#818181] mb-6 sm:mb-8 md:mb-6 leading-relaxed 2xl:leading-[48px] text-center md:text-left px-4 sm:px-0">
+            <p className="text-base sm:text-lg md:text-lg text-[#818181] mb-6 sm:mb-8 md:mb-6 leading-relaxed text-center md:text-left px-4 sm:px-0">
               Connect, Learn, Work, and Grow in the Bitcoin ecosystem. <br />{" "}
               Everything you need in one place.
             </p>
@@ -437,7 +438,7 @@ export default function Home() {
               <Button
                 size="lg"
                 variant="outline"
-                className="bg-[#1E1E1E] text-white border-[#1E1E1E] font-semibold hover:text-white hover:bg-gray-800 py-2 px-5 sm:px-6 text-sm sm:text-base 2xl:text-[24px] w-full sm:w-auto h-full"
+                className="bg-[#1E1E1E] text-white border-[#1E1E1E] font-semibold hover:text-white hover:bg-gray-800 py-2 px-5 sm:px-6 text-sm md:text-base w-full sm:w-auto h-full"
                 asChild
               >
                 <a href="https://app.coinlaa.com/register/" target="_self">
@@ -447,7 +448,7 @@ export default function Home() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-[#1E1E1E] text-[#333333] font-semibold hover:bg-gray-50 py-2 px-5 sm:px-6 text-sm sm:text-base 2xl:text-[24px] w-full sm:w-auto h-full"
+                className="border-[#1E1E1E] text-[#333333] font-semibold hover:bg-gray-50 py-2 px-5 sm:px-6 text-sm sm:text-base md:text-base w-full sm:w-auto h-full"
                 asChild
               >
                 <a href="https://app.coinlaa.com/" target="_self">
@@ -457,11 +458,11 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex pointer-events-none justify-end">
+          <div className="flex pointer-events-none justify-center">
             <img
               src="/background-graphics.png"
               alt="Background Graphics"
-              className="w-full h-full object-contain object-right"
+              className="w-full h-[200px] md:h-[400px] object-contain object-center"
               loading="lazy"
             />
           </div>
