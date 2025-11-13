@@ -101,7 +101,7 @@ export default function OfferPopup() {
         </div>
 
         <DialogFooter className="flex-col sm:flex-col p-6 pt-0 gap-3">
-          <a href="https://app.coinlaa.com/" className="w-full">
+          <a href="https://app.coinlaa.com/register/" className="w-full">
             <Button
               className="w-full text-base py-6 font-semibold bg-orange-600 text-white 
                            hover:bg-orange-700 transition-colors
