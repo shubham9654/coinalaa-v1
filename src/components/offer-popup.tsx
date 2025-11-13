@@ -56,7 +56,7 @@ export default function OfferPopup() {
 
   return (
     <Dialog open={open} onOpenChange={(val) => setOpen(val)}>
-      <DialogContent className="max-w-md rounded-xl p-0 overflow-hidden bg-white">
+      <DialogContent className="w-[400px] max-w-md rounded-xl p-0 overflow-hidden bg-white">
         <div className="relative p-6 pt-10 bg-gradient-to-br from-gray-50 to-gray-100 text-gray-800 border-b border-gray-100">
           <DialogClose className="absolute top-3 right-3 text-gray-500 hover:text-gray-700 transition-colors">
             <span className="sr-only">Close</span>
@@ -68,7 +68,7 @@ export default function OfferPopup() {
             </div>
 
             <h2 className="text-3xl font-extrabold leading-tight tracking-tight mb-2">
-              <span className="block">Limited-Time Offer!</span>
+              <span className="block">Bitcoin Amsterdam Offer</span>
             </h2>
             {/* <p className="text-gray-600 text-sm max-w-xs">
                 Unlock your potential with our complete course bundle today.
@@ -85,7 +85,7 @@ export default function OfferPopup() {
             </DialogDescription> */}
           </DialogHeader>
 
-          <div className="mt-4 p-4 border border-dashed border-orange-600/40 bg-orange-500/5 rounded-lg text-center">
+          {/* <div className="mt-4 p-4 border border-dashed border-orange-600/40 bg-orange-500/5 rounded-lg text-center">
             <p className="text-sm text-gray-600 mb-1">
               Use this exclusive code at checkout:
             </p>
@@ -97,17 +97,17 @@ export default function OfferPopup() {
             <p className="text-xs text-gray-500 mt-2">
               *Available for new learners only. Offer expires soon.
             </p>
-          </div>
+          </div> */}
         </div>
 
         <DialogFooter className="flex-col sm:flex-col p-6 pt-0 gap-3">
-          <a href="/courses" className="w-full">
+          <a href="https://app.coinlaa.com/" className="w-full">
             <Button
               className="w-full text-base py-6 font-semibold bg-orange-600 text-white 
                            hover:bg-orange-700 transition-colors
                            shadow-lg shadow-orange-600/40 hover:shadow-orange-600/50"
             >
-              Claim Your Discount Now
+              Claim your Free access
             </Button>
           </a>
 
