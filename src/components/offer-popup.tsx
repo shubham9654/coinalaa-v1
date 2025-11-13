@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import React, { useEffect, useState } from "react"
-import { Sparkles, X } from "lucide-react" 
+import React, { useEffect, useState } from "react";
+import { Sparkles, X } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -10,49 +10,49 @@ import {
   DialogDescription,
   DialogFooter,
   DialogClose,
-} from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button"
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 
-const STORAGE_KEY = "offer-popup-shown-v4" // Updated version key
+const STORAGE_KEY = "offer-popup-shown-v4"; // Updated version key
 
 export default function OfferPopup() {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    if (typeof window === "undefined") return
+    if (typeof window === "undefined") return;
     try {
-      if (localStorage.getItem(STORAGE_KEY) === "1") return
+      if (localStorage.getItem(STORAGE_KEY) === "1") return;
     } catch (e) {
       // ignore localStorage errors (privacy mode)
-      return
+      return;
     }
 
-    let triggered = false
-    let timer: ReturnType<typeof setTimeout> | null = null
+    let triggered = false;
+    let timer: ReturnType<typeof setTimeout> | null = null;
 
     function onScroll() {
-      if (triggered) return
-      triggered = true
+      if (triggered) return;
+      triggered = true;
       // mark shown so it won't trigger again
       try {
-        localStorage.setItem(STORAGE_KEY, "1")
+        localStorage.setItem(STORAGE_KEY, "1");
       } catch (e) {
         // ignore
       }
 
       // wait 2-3 seconds (randomized) before showing
-      const delay = 2000 + Math.floor(Math.random() * 1000)
-      timer = setTimeout(() => setOpen(true), delay)
-      window.removeEventListener("scroll", onScroll)
+      const delay = 2000 + Math.floor(Math.random() * 1000);
+      timer = setTimeout(() => setOpen(true), delay);
+      window.removeEventListener("scroll", onScroll);
     }
 
-    window.addEventListener("scroll", onScroll, { passive: true })
+    window.addEventListener("scroll", onScroll, { passive: true });
 
     return () => {
-      window.removeEventListener("scroll", onScroll)
-      if (timer) clearTimeout(timer)
-    }
-  }, [])
+      window.removeEventListener("scroll", onScroll);
+      if (timer) clearTimeout(timer);
+    };
+  }, []);
 
   return (
     <Dialog open={open} onOpenChange={(val) => setOpen(val)}>
@@ -70,19 +70,19 @@ export default function OfferPopup() {
             <h2 className="text-3xl font-extrabold leading-tight tracking-tight mb-2">
               <span className="block">Limited-Time Offer!</span>
             </h2>
-            <p className="text-gray-600 text-sm max-w-xs">
+            {/* <p className="text-gray-600 text-sm max-w-xs">
                 Unlock your potential with our complete course bundle today.
-            </p>
+            </p> */}
           </div>
         </div>
         <div className="p-6">
           <DialogHeader className="text-center mb-4">
             <DialogTitle className="text-4xl font-extrabold text-orange-600 mb-2">
-                30% OFF
+              1 Year Free Access
             </DialogTitle>
-            <DialogDescription className="text-base text-muted-foreground font-medium">
+            {/* <DialogDescription className="text-base text-muted-foreground font-medium">
               Complete Bitcoin Course Bundle
-            </DialogDescription>
+            </DialogDescription> */}
           </DialogHeader>
 
           <div className="mt-4 p-4 border border-dashed border-orange-600/40 bg-orange-500/5 rounded-lg text-center">
@@ -90,34 +90,37 @@ export default function OfferPopup() {
               Use this exclusive code at checkout:
             </p>
             <div className="inline-block p-2 bg-white border border-orange-600/30 rounded-md shadow-sm">
-                <span className="text-lg font-bold tracking-widest text-orange-600 select-all">
-                    COIN30
-                </span>
+              <span className="text-lg font-bold tracking-widest text-orange-600 select-all">
+                COIN30
+              </span>
             </div>
-            <p className="text-xs text-gray-500 mt-2"> 
-                *Available for new learners only. Offer expires soon.
+            <p className="text-xs text-gray-500 mt-2">
+              *Available for new learners only. Offer expires soon.
             </p>
           </div>
         </div>
 
         <DialogFooter className="flex-col sm:flex-col p-6 pt-0 gap-3">
           <a href="/courses" className="w-full">
-            <Button 
-                className="w-full text-base py-6 font-semibold bg-orange-600 text-white 
+            <Button
+              className="w-full text-base py-6 font-semibold bg-orange-600 text-white 
                            hover:bg-orange-700 transition-colors
                            shadow-lg shadow-orange-600/40 hover:shadow-orange-600/50"
             >
               Claim Your Discount Now
             </Button>
           </a>
-          
+
           <DialogClose asChild>
-            <Button variant="link" className="text-sm text-gray-500 hover:text-gray-700 p-0 h-auto">
+            <Button
+              variant="link"
+              className="text-sm text-gray-500 hover:text-gray-700 p-0 h-auto"
+            >
               No thanks, I'll pay full price
             </Button>
           </DialogClose>
         </DialogFooter>
       </DialogContent>
     </Dialog>
-  )
+  );
 }
