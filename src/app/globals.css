@@ -150,3 +150,16 @@
 .features-accordion [data-slot="accordion-item"][data-state="open"] .accordion-chevron {
   color: rgb(249 115 22) !important;
 }
+
+.sidebar-content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar-content::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+
+.sidebar-content::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
