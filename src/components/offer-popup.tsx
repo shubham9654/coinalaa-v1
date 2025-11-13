@@ -78,23 +78,26 @@ export default function OfferPopup() {
 
   return (
     <Dialog open={open} onOpenChange={(val) => setOpen(val)}>
-      {/* Increased max-width to max-w-3xl for wider horizontal layout on desktop */}
       <DialogContent
-        className="w-full max-w-[800px] rounded-2xl p-0 overflow-hidden 
+        className="w-full max-w-[800px] rounded-2xl p-0
                    bg-zinc-950 text-white border-2 border-orange-600 
-                   shadow-2xl shadow-orange-600/40 min-h-0"
+                   shadow-2xl shadow-orange-600/40 min-h-0
+                   overflow-y-auto md:overflow-hidden max-h-[85vh]" // <-- CHANGED: Removed overflow-hidden, added overflow-y-auto and max-h
       >
         <DialogClose className="absolute top-4 right-4 text-orange-400 hover:text-orange-600 z-10">
           <span className="sr-only">Close</span>
         </DialogClose>
 
+        {/* This div already correctly switches from flex-col (mobile) to grid (desktop) */}
         <div className="p-8 md:py-4 md:px-2 bg-zinc-900 flex flex-col items-center md:grid grid-cols-2 gap-4">
           {/* Header and Offer Details */}
           <div className="flex flex-col items-center text-center w-full mb-8">
-            <h1 className="text-4xl font-black text-orange-500 mb-1">
+            {/* --- RESPONSIVE TEXT --- */}
+            <h1 className="text-3xl md:text-4xl font-black text-orange-500 mb-1">
               Coinlaa
             </h1>
-            <p className="text-xl font-bold tracking-wide mb-6 text-white/90">
+            {/* --- RESPONSIVE TEXT --- */}
+            <p className="text-lg md:text-xl font-bold tracking-wide mb-6 text-white/90">
               EXCLUSIVE OFFER
             </p>
             <p className="text-base font-medium text-orange-400 uppercase tracking-widest mb-4">
@@ -102,17 +105,20 @@ export default function OfferPopup() {
             </p>
 
             <div className="mb-8">
-              <p className="text-5xl font-extrabold text-white leading-none mb-2">
+              {/* --- RESPONSIVE TEXT --- */}
+              <p className="text-4xl md:text-5xl font-extrabold text-white leading-none mb-2">
                 1 YEAR
               </p>
-              <p className="text-3xl font-bold text-white/90">
+              {/* --- RESPONSIVE TEXT --- */}
+              <p className="text-2xl md:text-3xl font-bold text-white/90">
                 PREMIUM SUBSCRIPTION
               </p>
             </div>
 
             {/* Price Box */}
             <div className="inline-block p-4 bg-zinc-800 border-4 border-orange-500 rounded-lg shadow-xl">
-              <span className="text-5xl font-extrabold text-orange-500">
+              {/* --- RESPONSIVE TEXT --- */}
+              <span className="text-4xl md:text-5xl font-extrabold text-orange-500">
                 $600
               </span>
               <p className="text-lg font-semibold text-white/80">WORTH</p>
@@ -122,13 +128,17 @@ export default function OfferPopup() {
           {/* --- Benefits List (Two-Column on MD screens and up, Vertical on Mobile) --- */}
           <div className="w-full mt-6">
             <DialogHeader className="mb-6 text-center">
-              <DialogTitle className="text-3xl font-extrabold tracking-tight text-orange-500">
+              {/* --- RESPONSIVE TEXT --- */}
+              <DialogTitle className="text-2xl md:text-3xl font-extrabold tracking-tight text-orange-500">
                 COINLAA PREMIUM BENEFITS
               </DialogTitle>
             </DialogHeader>
 
-            {/* This is the key change for responsiveness: grid-cols-1 on mobile, grid-cols-2 on medium+ */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-4 max-h-[350px] overflow-y-auto pr-2 sidebar-content">
+            {/* This layout is already correctly responsive (1 col -> 2 col) */}
+            <div
+              className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-4 pr-2 
+                           sidebar-content md:max-h-[350px] md:overflow-y-auto" // <-- CHANGED: Prefixed max-h and overflow with md:
+            >
               {premiumBenefits.map((section, index) => (
                 <div key={index} className="break-inside-avoid">
                   <h3 className="text-lg font-extrabold text-orange-400 mb-1 border-b border-orange-600/50 pb-0.5">
@@ -163,8 +173,9 @@ export default function OfferPopup() {
             rel="noopener noreferrer"
             className="w-full block"
           >
+            {/* --- RESPONSIVE BUTTON (TEXT/PADDING) --- */}
             <Button
-              className="w-full text-lg py-7 font-bold bg-orange-600 text-black 
+              className="w-full text-base md:text-lg py-6 md:py-7 font-bold bg-orange-600 text-black 
                            hover:bg-orange-700 transition-colors
                            shadow-xl shadow-orange-600/50 hover:shadow-orange-600/70"
             >
