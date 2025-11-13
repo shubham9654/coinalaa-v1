@@ -58,7 +58,7 @@ export function SiteHeader({
         asChild
         className="text-xs sm:text-sm px-3 sm:px-4"
       >
-        <a href="https://app.coinlaa.com/login/" target="_self">
+        <a href="https://app.coinlaa.com/wp-login.php" target="_self">
           Sign In
         </a>
       </Button>
